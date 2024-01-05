@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'users/css/login.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Логин</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="text-center mt-4 name">
+            ГУП "Нерезиновая"
+        </div>
+        <form class="p-3 mt-3" method="post">
+            {% csrf_token %}
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="username" id="userName" placeholder="Имя пользователя">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Пароль">
+            </div>
+            {{ form.errors }}
+            <button class="btn mt-3">Войти</button>
+        </form>
+        <div class="text-center fs-6">
+            <a href="{% url 'password_reset' %}">Забыли пароль?</a> или <a href="{% url 'users:register' %}">Зарегистрироваться</a>
+        </div>
+    </div>
+</body>
+</html>

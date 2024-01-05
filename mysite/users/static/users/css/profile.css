@@ -1,0 +1,31 @@
+body{
+
+    background-color:#B3E5FC;
+    border-radius: 10px;
+    float: left;
+
+}
+
+
+.card{
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+
+  background-color: #fff;
+}
+
+.role{
+  font-size:20px;
+  color: #a1aab9;
+}
+
+.btn.btn-sm.btn-outline-primary{
+    font-size:15px;
+    height: 50px;
+}
+
+.btn.btn-sm.btn-primary{
+    font-size:15px;
+    height: 50px;
+}

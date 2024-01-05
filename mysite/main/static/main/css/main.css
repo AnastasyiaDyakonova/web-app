@@ -1,0 +1,53 @@
+body{
+    background: #8efa8e;
+}
+
+header{
+    background: #f7fef7;
+    width: 100%;
+    height: 10vh;
+    color: blue;
+    padding: 0.5%;
+}
+
+header img{
+    width: 80px;
+    float: left;
+}
+
+header .logo{
+    font-size: 30px;
+    margin-left: 5px;
+    font-weight: bold;
+    position: relative;
+    top: 0px;
+
+}
+
+header h3{
+    margin-top: -40px;
+    top-size: 20px;
+    text-align: center;
+}
+
+header table{
+    list-style: none;
+    float: right;
+}
+
+header table th {
+    color: blue;
+    align: right;
+    margin-top: 10px;
+    valign: 10px;
+    /*display: block;
+    margin-top: -30px;
+    margin-left: -10px;
+    transition: all .6s ease;*/
+}
+
+/*header ul li:hover, aside ul a:hover{
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}*/

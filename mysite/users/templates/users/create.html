@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Форма для добавления записи в базу данных</title>
+</head>
+<body>
+    <h1>Форма для добавления записи в базу данных</h1>
+    <form method="post" enctype= multipart/form-data>
+        {% csrf_token %}
+        <label for="login">Логин:</label><br>
+        {{ form.login }}<br><br>
+        <label for="date_and_time_route_from">Дата и время начала маршрута:</label><br>
+        {{ form.date_and_time_route_from }}<br><br>
+         <label for="date_and_time_route_to">Дата и время конца маршрута:</label><br>
+        {{ form.date_and_time_route_to }}<br><br>
+        <label for="odometr_from">Одометр на начало маршрута:</label><br>
+        {{ form.odometr_from }}<br><br>
+        <label for="odometr_to">Одометр на конец маршрута:</label><br>
+        {{ form.odometr_to }}<br><br>
+        <label for="date_check">Дата оплаты чека:</label><br>
+        {{ form.date_check }}<br><br>
+        <label for="sum_check">Сумма чека за бензин:</label><br>
+        {{ form.sum_check }}<br><br>
+        <label for="image_check">Добавь фото чека за бензин:</label><br>
+        {{ form.image_check }}<br><br>
+        <label for="number_route">Номер маршрута:</label><br>
+        {{ form.number_route }}<br><br>
+        <label for="result_route">Результат прохождения маршрута(Пройден или Не пройден):</label><br>
+        {{ form.result_route }}<br><br>
+        <span>{{ error }}</span>
+        <button type="submit">Добавить отчет</button>
+    </form>
+</body>
+</html>

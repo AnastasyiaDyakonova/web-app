@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+
+                <div class="card p-3">
+
+                    <div class="d-flex align-items-center">
+
+                        <div class="image">
+                            <img src= "{% block image %}{% endblock %}" class="rounded" width="155" >
+                    </div>
+
+                    <div class="ml-3 w-100">
+
+                       <h4 class="mb-0 mt-0">{{ user.username }}</h4>
+                       <span></span>
+
+                       <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+
+                        <div class="d-flex flex-column">
+
+                            <span class="role">{% block role %}{% endblock %}</span>
+
+                        </div>
+
+                       </div>
+
+
+                       <div class="button mt-2 d-flex flex-row align-items-center">
+
+                        <button class="btn btn-sm btn-outline-primary w-100" onclick="location.href='{% url 'password_change' %}'">Сменить пароль</button>
+                        <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile'">Выйти</button>
+                        {% block button %}{% endblock %}
+
+                       </div>
+
+
+                    </div>
+
+
+                    </div>
+
+                </div>
+
+             </div>
+</body>
+</html>
