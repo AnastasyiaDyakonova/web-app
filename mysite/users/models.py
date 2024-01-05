@@ -17,7 +17,7 @@ class driver_report(models.Model):
     odometr_to = models.BigIntegerField('Одометр на конец маршрута')
     date_check = models.DateField('Дата оплаты чека')
     sum_check = models.FloatField('Сумма чека за бензин')
-    #image_check = models.ImageField('Фото чека за бензин', upload_to='images/', default='')
+    image_check = models.ImageField('Фото чека за бензин', upload_to='images/', default='')
     number_route = models.BigIntegerField('Номер маршрута')
     result_route = models.CharField('Результат прохождения маршрута(Пройден или Не пройден)', max_length=10)
 

@@ -28,21 +28,36 @@ class RegisterView(FormView):
 def create(request):
     error = ''
     if request.method == 'POST':
-        form = driver_reportForm(request.POST) #, request.FILES)
+        form = driver_reportForm(request.POST, request.FILES)
         if form.is_valid():
-            """name = form.cleaned_data.get("login")
-            img = form.cleaned_data.get("image_check")
+            login = form.cleaned_data.get("login")
+            date_and_time_route_from = form.cleaned_data.get("date_and_time_route_from")
+            date_and_time_route_to = form.cleaned_data.get("date_and_time_route_to")
+            odometr_from = form.cleaned_data.get("odometr_from")
+            odometr_to = form.cleaned_data.get("odometr_to")
+            date_check = form.cleaned_data.get("date_check")
+            sum_check = form.cleaned_data.get("sum_check")
+            number_route = form.cleaned_data.get("number_route")
+            result_route = form.cleaned_data.get("result_route")
+            image_check = form.cleaned_data.get("image_check")
             obj = driver_report.objects.create(
-                title=name,
-                img=img
+                login=login,
+                date_and_time_route_from=date_and_time_route_from,
+                date_and_time_route_to=date_and_time_route_to,
+                odometr_from=odometr_from,
+                odometr_to=odometr_to,
+                date_check=date_check,
+                sum_check=sum_check,
+                number_route=number_route,
+                result_route=result_route,
+                image_check=image_check
             )
             obj.save()
-            print(obj)"""
-            form.save()
             return redirect('/profile')
         else:
             error = 'Неверно заполнена форма'
-    form = driver_reportForm()
+    else:
+        form = driver_reportForm()
     data = {
         'form':form,
         'error':error

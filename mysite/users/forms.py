@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from .models import Buyer, driver_report
-from django.forms import ModelForm, TextInput,  DateTimeInput, NumberInput, DateInput #FileInput,
+from django.forms import ModelForm, TextInput,  DateTimeInput, NumberInput, DateInput, FileInput
 
 
 class RegisterForm(UserCreationForm):
@@ -12,7 +12,7 @@ class RegisterForm(UserCreationForm):
 class driver_reportForm(ModelForm):
     class Meta:
         model = driver_report
-        fields = ['login', 'date_and_time_route_from', 'date_and_time_route_to', 'odometr_from', 'odometr_to', 'date_check', 'sum_check', 'number_route', 'result_route'] #'image_check',
+        fields = ['login', 'date_and_time_route_from', 'date_and_time_route_to', 'odometr_from', 'odometr_to', 'date_check', 'sum_check', 'number_route', 'result_route', 'image_check']
 
         widgets = {
             "login": TextInput(attrs={
@@ -50,11 +50,11 @@ class driver_reportForm(ModelForm):
                 'name': 'sum_check',
                 'required':''
             }),
-          """ "image_check": FileInput(attrs={
+           "image_check": FileInput(attrs={
                 'id': 'image_check',
                 'name': 'image_check',
                 'required':''
-            }),"""
+            }),
             "number_route": NumberInput(attrs={
                 'id': 'number_route',
                 'name': 'number_route',
