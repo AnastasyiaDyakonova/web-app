@@ -6,13 +6,40 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Форма для добавления записи в базу данных</title>
+    <style type="text/css">
+   div.block {
+    max-width: 400px;
+    min-height: 300px;
+    margin: 30px auto;
+    padding: 20px 20px 20px 20px;
+    background-color: #76b852;
+    border-radius: 15px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #76b852;
+   }
+    div.block .form{
+        }
+    input {
+    width: 70%;
+    padding: 8px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    }
+    h1{text-align: center }
+   </style>
 </head>
 <body>
     <h1>Форма для добавления записи в базу данных</h1>
-    <form method="post" enctype= multipart/form-data>
+    <div class = "block">
+        <form method="post" enctype= multipart/form-data>
         {% csrf_token %}
-        <label for="login">Логин:</label><br>
-        {{ form.login }}<br><br>
+        <label for="task_number">Номер задачи:</label><br>
+        {{ form.task_number }}<br><br>
+        <label for="date_and_time_task">Дата и время задачи:</label><br>
+        {{ form.date_and_time_task }}<br><br>
+        <label for="phone_manager">Телефон менеджера в формате: 89999999999:</label><br>
+        {{ form.phone_manager }}<br><br>
+        <label for="phone_driver">Телефон водителя в формате: 89999999999:</label><br>
+        {{ form.phone_driver }}<br><br>
         <label for="date_and_time_route_from">Дата и время начала маршрута:</label><br>
         {{ form.date_and_time_route_from }}<br><br>
          <label for="date_and_time_route_to">Дата и время конца маршрута:</label><br>
@@ -34,5 +61,6 @@
         <span>{{ error }}</span>
         <button type="submit">Добавить отчет</button>
     </form>
+    </div>
 </body>
 </html>

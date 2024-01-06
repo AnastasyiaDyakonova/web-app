@@ -1,31 +1,57 @@
 body{
-
     background-color:#B3E5FC;
+}
+
+aside{
     border-radius: 10px;
     float: left;
+    background: #76b852;
+    width: 32%;
+    height: 100vh;
+    border-right: 5px solid green;
+}
+
+.card.p-3{
+  width: 600px;
+  border: 4mm ridge rgba(211, 220, 50, .6);
+  border-radius: 10px;
+  background-color: green;
 
 }
 
+h4{
+    text-align: center;
+    color: white;
+    font-size: 5px;
+}
 
-.card{
-  width: 400px;
-  border: none;
-  border-radius: 10px;
+.d-flex.flex-column{
+    background-color: green
 
-  background-color: #fff;
 }
 
 .role{
   font-size:20px;
-  color: #a1aab9;
-}
-
-.btn.btn-sm.btn-outline-primary{
-    font-size:15px;
-    height: 50px;
+  color: white;
+  text-align: center
 }
 
 .btn.btn-sm.btn-primary{
-    font-size:15px;
-    height: 50px;
+    font-size:20px;
+    height: 40px;
+    width: 100%;
 }
+
+aside ul{
+    list-style: none;
+    }
+
+aside ul li{
+    margin-top: 15px;
+
+}
+
+.ymap{
+    float: right;
+}
+

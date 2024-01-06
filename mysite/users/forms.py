@@ -12,12 +12,27 @@ class RegisterForm(UserCreationForm):
 class driver_reportForm(ModelForm):
     class Meta:
         model = driver_report
-        fields = ['login', 'date_and_time_route_from', 'date_and_time_route_to', 'odometr_from', 'odometr_to', 'date_check', 'sum_check', 'number_route', 'result_route', 'image_check']
+        fields = ['task_number', 'date_and_time_task', 'phone_manager', 'phone_driver', 'date_and_time_route_from', 'date_and_time_route_to', 'odometr_from', 'odometr_to', 'date_check', 'sum_check', 'number_route', 'result_route', 'image_check']
 
         widgets = {
-            "login": TextInput(attrs={
-                'id': 'login',
-                'name': 'login',
+            "task_number": NumberInput(attrs={
+                'id': 'task_number',
+                'name': 'task_number',
+                'required':''
+            }),
+            "date_and_time_task": DateTimeInput(attrs={
+                'id': 'date_and_time_task',
+                'name': 'date_and_time_task',
+                'required': ''
+            }),
+            "phone_manager": TextInput(attrs={
+                'id': 'phone_manager',
+                'name': 'phone_manager',
+                'required': ''
+            }),
+            "phone_driver": TextInput(attrs={
+                'id': 'phone_driver',
+                'name': 'phone_driver',
                 'required':''
             }),
             "date_and_time_route_from": DateTimeInput(attrs={

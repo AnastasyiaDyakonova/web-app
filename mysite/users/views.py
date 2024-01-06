@@ -10,9 +10,9 @@ from .models import driver_report
 @login_required
 def profile_views(request):
     user = request.user
-    if user.role == 'manager':
+    if user.role == 'менеджер':
         return render(request, 'users/manager.html')
-    elif user.role == 'driver':
+    elif user.role == 'водитель':
         return render(request, 'users/driver.html')
     else:
         return render(request, 'users/profile.html')
@@ -30,7 +30,10 @@ def create(request):
     if request.method == 'POST':
         form = driver_reportForm(request.POST, request.FILES)
         if form.is_valid():
-            login = form.cleaned_data.get("login")
+            task_number = form.cleaned_data.get("task_number")
+            date_and_time_task = form.cleaned_data.get("date_and_time_task")
+            phone_manager = form.cleaned_data.get("phone_manager")
+            phone_driver = form.cleaned_data.get("phone_driver")
             date_and_time_route_from = form.cleaned_data.get("date_and_time_route_from")
             date_and_time_route_to = form.cleaned_data.get("date_and_time_route_to")
             odometr_from = form.cleaned_data.get("odometr_from")
@@ -41,7 +44,10 @@ def create(request):
             result_route = form.cleaned_data.get("result_route")
             image_check = form.cleaned_data.get("image_check")
             obj = driver_report.objects.create(
-                login=login,
+                task_number=task_number,
+                date_and_time_task=date_and_time_task,
+                phone_manager=phone_manager,
+                phone_driver=phone_driver,
                 date_and_time_route_from=date_and_time_route_from,
                 date_and_time_route_to=date_and_time_route_to,
                 odometr_from=odometr_from,
