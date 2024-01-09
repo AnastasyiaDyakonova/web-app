@@ -1,0 +1,18 @@
+{% extends 'main/forms.html' %}
+{% block title %}Форма для добавления записи в базу данных{% endblock %}
+{% block title2 %}Добавить отчет о маршруте:{% endblock %}
+{% block form %}
+        <form method="post" enctype= multipart/form-data>
+        {% csrf_token %}
+            {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }} <br>
+                {{ field }}<br><br>
+            </div>
+            {% endfor %}
+        <span>{{ error }}</span>
+        <button type="submit">Добавить отчет</button>
+    </form>
+{% endblock %}
+

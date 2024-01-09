@@ -2,7 +2,7 @@ body{
     background-color:#B3E5FC;
 }
 
-aside{
+aside.left{
     border-radius: 10px;
     float: left;
     background: #76b852;
@@ -11,6 +11,9 @@ aside{
     border-right: 5px solid green;
 }
 
+
+.panel{float: right;
+}
 .card.p-3{
   width: 600px;
   border: 4mm ridge rgba(211, 220, 50, .6);
@@ -39,19 +42,34 @@ h4{
 .btn.btn-sm.btn-primary{
     font-size:20px;
     height: 40px;
-    width: 100%;
+    width: 50%;
 }
 
-aside ul{
+aside.left ul{
     list-style: none;
     }
 
-aside ul li{
+aside.left ul li{
     margin-top: 15px;
 
 }
 
-.ymap{
-    float: right;
+.buttonmane{
+    background: #00b3f3;
 }
 
+
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Разделение на две равные части */
+}
+
+.routing {
+  background-color: lightblue; /* Цвет фона первой части */
+  height: 640px;
+}
+
+.ymap {
+  background-color: lightgreen; /* Цвет фона второй части */
+}

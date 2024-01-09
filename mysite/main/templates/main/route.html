@@ -1,0 +1,28 @@
+{% extends 'main/forms.html' %}
+{% block title %}Форма для добавления маршрута в базу данных{% endblock %}
+{% block title2 %}Создать маршрут:{% endblock %}
+{% block form %}
+       <form method="post">
+            {% csrf_token %}
+            {% for field in form1 %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }} <br>
+                {{ field }}<br><br>
+            </div>
+            {% endfor %}
+            <span>{{ error }}</span>
+
+            {% csrf_token %}
+            {% for field in form2 %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }} <br>
+                {{ field }}<br><br>
+            </div>
+            {% endfor %}
+        <span>{{ error }}</span>
+            <button type="submit">Добавить отчет</button>
+    </form>
+{% endblock %}
+

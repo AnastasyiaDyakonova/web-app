@@ -1,10 +1,11 @@
-from django.urls import path
-from .views import RegisterView, profile_views, create
+from django.urls import path, include
+from .views import RegisterView, profile_views, home
 
 app_name = 'users'
 
 urlpatterns = [
     path('profile/', profile_views, name = "profile"),
     path('register/', RegisterView.as_view(), name = "register"),
-    path('profile/create', create, name = "create"),
+    path('', home, name = "home"),
+    path('', include('main.urls')),
 ]

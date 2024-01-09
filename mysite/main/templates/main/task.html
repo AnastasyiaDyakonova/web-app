@@ -1,0 +1,18 @@
+{% extends 'main/forms.html' %}
+{% block title %}Создать задание{% endblock %}
+{% block title2 %}Создать задание{% endblock %}
+{% block form %}
+<form method="post">
+    {% csrf_token %}
+    {% for field in form3 %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} <br>
+        {{ field }}<br><br>
+    </div>
+    {% endfor %}
+    <span>{{ error }}</span>
+    <button type="submit">Добавить отчет</button>
+</form>
+{% endblock %}
+
