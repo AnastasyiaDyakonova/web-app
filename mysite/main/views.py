@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
-from .forms import driver_reportForm, catalog_routeForm, catalog_route_urlForm, manager_taskForm, driver_step_routeForm
+from .forms import driver_reportForm, catalog_route_urlForm, manager_taskForm, driver_step_routeForm
 from .models import driver_report
-
+from django.db import connection
 
 def create(request):
     error = ''
@@ -12,18 +12,13 @@ def create(request):
         if form.is_valid():
             obj = driver_report.objects.create(
                 task_number=form.cleaned_data.get("task_number"),
-                date_and_time_task=form.cleaned_data.get("date_and_time_task"),
-                phone_manager=form.cleaned_data.get("phone_manager"),
-                phone_driver=form.cleaned_data.get("phone_driver"),
-                date_and_time_route_from=form.cleaned_data.get("date_and_time_route_from"),
-                date_and_time_route_to=form.cleaned_data.get("date_and_time_route_to"),
                 odometr_from=form.cleaned_data.get("odometr_from"),
                 odometr_to=form.cleaned_data.get("odometr_to"),
+                check_number=form.cleaned_data.get("check_number"),
                 date_check=form.cleaned_data.get("date_check"),
                 sum_check=form.cleaned_data.get("sum_check"),
-                number_route=form.cleaned_data.get("number_route"),
-                result_route=form.cleaned_data.get("result_route"),
-                image_check=form.cleaned_data.get("image_check")
+                image_check = request.FILES.get("image_check")
+                #image_check=form.cleaned_data.get("image_check")
             )
             obj.save()
             return redirect('/profile')
@@ -44,25 +39,19 @@ def create(request):
 def route(request):
     error = ''
     if request.method == 'POST':
-        form2 = catalog_routeForm(request.POST)
-        form1 = catalog_route_urlForm(request.POST)
+        form2 = catalog_route_urlForm(request.POST)
 
-        if form1.is_valid() and form2.save():
-            form1.save()
+        if form2.is_valid():
             form2.save()
             return redirect('/profile')
         else:
             error = 'Неверно заполнена форма!!!'
-
     else:
-        form2 = catalog_routeForm()
-        form1 = catalog_route_urlForm()
+        form2 = catalog_route_urlForm()
     data = {
-        'form1':form1,
         'form2': form2,
         'error':error
     }
-
     return render(request, 'main/route.html', data)
 
 
@@ -91,7 +80,7 @@ def driver_step_route_view(request):
         form = driver_step_routeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/profile')
+            return redirect('/profile/create')
         else:
             error = 'Неверно заполнена форма!!!'
     else:
@@ -101,3 +90,50 @@ def driver_step_route_view(request):
         'error':error
     }
     return render(request, 'main/step.html', data)
+
+def select_url_route(request):
+    with connection.cursor() as cursor:
+        cursor.execute("select number_route, url_route from public.main_catalog_route_url ;")
+        data = cursor.fetchall()
+    return render(request, 'main/select_url_route.html', {'data': data})
+
+def select_catalog_driver(request):
+    with connection.cursor() as cursor:
+        cursor.execute("""select first_name, 
+                                  last_name, 
+                                  username, 
+                                  email 
+                            from public.users_buyer 
+                            where role='водитель';""")
+        data = cursor.fetchall()
+    return render(request, 'main/select_catalog_driver.html', {'data': data})
+
+
+def select_report(request):
+    with connection.cursor() as cursor:
+        cursor.execute("""select '№'|| t1.task_number || ' от ' || to_char(t1.date_and_time_task, 'dd.mm.yyyy') as number_date__task,  
+	   t5.first_name || ' ' ||  t5.last_name as FI, 
+	   t5.username,
+	   t2.date_and_time_route_to - t2.date_and_time_route_from as time_route,
+	   t3.odometr_to - t3.odometr_from as distance_km,
+	   '№'|| t3.check_number || ' от ' || to_char(t3.date_check, 'dd.mm.yyyy') as number_date_and_time_check,
+	   t3.sum_check, 
+	   t3.image_check,
+	   	case 
+	   	when (t2.point_1::int + t2.point_2::int + t2.point_3::int + t2.point_4::int + t2.point_5::int + t2.point_6::int + t2.point_7::int + t2.point_8::int + t2.point_9::int + t2.point_10::int < 10) or  (t2.point_1::int + t2.point_2::int + t2.point_3::int + t2.point_4::int + t2.point_5::int + t2.point_6::int + t2.point_7::int + t2.point_8::int + t2.point_9::int + t2.point_10::int > 10) then 'Не пройден'
+	   	else 'Пройден'
+	   end result,
+	   t1.number_route,
+	   t4.url_route
+from public.main_manager_task t1
+left join public.main_driver_step_route t2
+on t1.task_number = t2.task_number
+left join public.main_driver_report t3
+on t2.task_number = t3.task_number 
+left join public.main_catalog_route_url t4
+on t1.number_route = t4.number_route 
+left join public.users_buyer t5
+on t1.phone_driver = t5.username 
+""")
+        data = cursor.fetchall()
+    return render(request, 'main/select_report.html', {'data': data})

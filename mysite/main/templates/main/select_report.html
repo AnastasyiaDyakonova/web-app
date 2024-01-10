@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="{% static 'main/css/catalog.css' %}">
+    <title>Отчет по заданиям</title>
+</head>
+<body>
+
+<h1> Отчет по заданиям </h1>
+<form method="post" enctype= multipart/form-data>
+    {% csrf_token %}
+    <table border="1">
+            <tr>
+                <th>Номер и дата задания</th>
+                <th>Имя и фамилия водителя</th>
+                <th>Телефон водителя</th>
+                <th>Время в пути</th>
+                <th>Расстояние в км</th>
+                <th>Номер и дата чека</th>
+                <th>Сумма чека</th>
+                <th>Фото чека</th>
+                <th>Результат прохождения маршрута</th>
+                <th>Номер и url-маршрута</th>
+            </tr>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row.0 }} </td>
+                    <td>{{ row.1 }} </td>
+                    <td>{{ row.2 }} </td>
+                    <td>{{ row.3 }} </td>
+                    <td>{{ row.4 }} </td>
+                    <td>{{ row.5 }} </td>
+                    <td>{{ row.6 }} </td>
+                   <!-- <td><a href="{{ row.7 }}" target="_blank">{{ row.7.file }}</a></td> -->
+                    <td>{{ row.7 }}</td>
+                    <td>{{ row.8 }}</td>
+
+                    <td><a href="{{ row.10 }}" target="_blank">{{ row.9 }}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+</form>
+</body>
+</html>

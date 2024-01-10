@@ -3,6 +3,13 @@
 {% block title2 %}Создать задание{% endblock %}
 {% block form %}
 <form method="post">
+    <h6>* Посмотрите в отчете последний номер задачи и поставьте следующий номер</h6>
+    <h6>* Поставьте текущюю дату и время, введите свой телефон в формате 89999999999</h6>
+    <h6>* Скопируйте из справочника водителей номер водителя </h6>
+    <h6>* Скопируйте из справочника маршрутов номер назначаемого маршрута</h6>
+    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task/select_url_route', '_blank')">Справочник маршрутов</button>
+    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task/select_catalog_driver', '_blank')">Справочник водителей</button><br>
+    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task/select_report', '_blank')">Посмотеть отчет</button>
     {% csrf_token %}
     {% for field in form3 %}
     <div class="fieldWrapper">
@@ -12,7 +19,9 @@
     </div>
     {% endfor %}
     <span>{{ error }}</span>
-    <button type="submit">Добавить отчет</button>
+    <button type="submit">Добавить задание</button>
 </form>
 {% endblock %}
+
+
 

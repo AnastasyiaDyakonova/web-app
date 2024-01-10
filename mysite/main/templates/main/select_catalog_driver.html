@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'main/css/catalog.css' %}">
+    <title>Справочник водителей</title>
+</head>
+<body>
+<h1> Справочник водителей </h1>
+<table border="1">
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Телефон</th>
+            <th>Электронная почта</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+                <td>{{ row.0 }} </td>
+                <td>{{ row.1 }}</td>
+                <td>{{ row.2 }}</td>
+                <td>{{ row.3 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

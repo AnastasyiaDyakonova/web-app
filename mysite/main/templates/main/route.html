@@ -3,26 +3,18 @@
 {% block title2 %}Создать маршрут:{% endblock %}
 {% block form %}
        <form method="post">
-            {% csrf_token %}
-            {% for field in form1 %}
-            <div class="fieldWrapper">
-                {{ field.errors }}
-                {{ field.label_tag }} <br>
-                {{ field }}<br><br>
-            </div>
-            {% endfor %}
-            <span>{{ error }}</span>
-
-            {% csrf_token %}
+           <h6>* Проверьте в отчете последний добавленный номер для одного из видов мусора и введите следующий номер в формате "Т-12" или "К-12", где Т-ТБО а К-КГО. </h6>
+           <h6>* Точки заполните в формате - "Т11.123123:12.456456" или "К11.123123:12.456456", где Т-ТБО, а К-КГО. 11.123123:12.456456 - это координаты широты и долготы, введенные через двоеточие. </h6>
+           {% csrf_token %}
             {% for field in form2 %}
             <div class="fieldWrapper">
                 {{ field.errors }}
                 {{ field.label_tag }} <br>
-                {{ field }}<br><br>
+                {{ field }}<br>
             </div>
             {% endfor %}
         <span>{{ error }}</span>
-            <button type="submit">Добавить отчет</button>
+            <button type="submit">Отправить маршрут</button>
     </form>
 {% endblock %}
 

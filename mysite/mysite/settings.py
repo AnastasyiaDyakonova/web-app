@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 from django.urls import reverse_lazy
@@ -138,5 +138,8 @@ LOGIN_REDIRECT_URL = reverse_lazy("users:profile")
 
 AUTH_USER_MODEL = 'users.Buyer'
 
-#MEDIA_URL = "/media/"
-#MEDIA_ROOT = [BASE_DIR /"media",]
+#MEDIA_URL = "media/"
+#MEDIA_ROOT = [BASE_DIR /"media"]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
