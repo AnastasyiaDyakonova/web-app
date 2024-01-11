@@ -12,6 +12,7 @@ python -m venv venv
 venv\Scripts\activate
 python -m pip install --upgrade pip
 pip install -r requirement.txt
+pip install django
 
 Далее перейдите в папку mysite/mysite и откройте файл settings.py. В этом блоке:
 DATABASES = {
