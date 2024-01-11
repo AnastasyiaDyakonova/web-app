@@ -119,11 +119,11 @@ def select_report(request):
 	   '№'|| t3.check_number || ' от ' || to_char(t3.date_check, 'dd.mm.yyyy') as number_date_and_time_check,
 	   t3.sum_check, 
 	   t3.image_check,
-	   	case 
-	   	when (t2.point_1::int + t2.point_2::int + t2.point_3::int + t2.point_4::int + t2.point_5::int + t2.point_6::int + t2.point_7::int + t2.point_8::int + t2.point_9::int + t2.point_10::int < 10) or  (t2.point_1::int + t2.point_2::int + t2.point_3::int + t2.point_4::int + t2.point_5::int + t2.point_6::int + t2.point_7::int + t2.point_8::int + t2.point_9::int + t2.point_10::int > 10) then 'Не пройден'
-	   	else 'Пройден'
-	   end result,
 	   t1.number_route,
+	   case 
+	   	when (t2.point_1::int + t2.point_2::int + t2.point_3::int + t2.point_4::int + t2.point_5::int + t2.point_6::int + t2.point_7::int + t2.point_8::int + t2.point_9::int + t2.point_10::int) = 10 then 'Не пройден'
+	   else 'Пройден'
+	   end result,
 	   t4.url_route
 from public.main_manager_task t1
 left join public.main_driver_step_route t2

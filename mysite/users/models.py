@@ -7,4 +7,4 @@ class Buyer(AbstractUser):
         ('менеджер', 'manager'),
         ('водитель', 'driver'),
     ]
-    role = models.CharField(max_length=8, choices=ROLE_CHOICES,default='user', verbose_name=_("role"))
+    role = models.CharField(max_length=8, choices=ROLE_CHOICES, default='user', verbose_name=_("role"))
