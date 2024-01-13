@@ -2,8 +2,10 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import cx_Oracle
 
-
+lib_dir = r"C:\Program Files\Oracle\instantclient_21_12"
+cx_Oracle.init_oracle_client(lib_dir=lib_dir)
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')

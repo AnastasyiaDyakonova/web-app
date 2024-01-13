@@ -17,6 +17,7 @@ class driver_report(models.Model):
 
 class catalog_route_url(models.Model):
     number_route = models.CharField('Номер маршрута', max_length=7, primary_key=True)
+    count_point_to_route = models.IntegerField('Количество точек на маршруте')
     point_1 = models.CharField('Точка 1', max_length=20)
     point_2 = models.CharField('Точка 2', max_length=20, blank=True)
     point_3 = models.CharField('Точка 3', max_length=20, blank=True)
@@ -28,13 +29,14 @@ class catalog_route_url(models.Model):
     point_9 = models.CharField('Точка 9', max_length=20, blank=True)
     point_10 = models.CharField('Точка 10', max_length=20, blank=True)
     url_route = models.URLField(verbose_name='Ссылка на маршрут', max_length = 500)
+    date_create_route = models.DateField('Дата создания маршрута')
     class Meta:
         verbose_name = 'URL-адрес'
         verbose_name_plural = "URL-адреса"
 
 class manager_task(models.Model):
     task_number = models.BigIntegerField('Номер задачи', primary_key=True)
-    date_and_time_task = models.DateTimeField('Дата и время задачи')
+    date_task = models.DateField('Дата задачи')
     phone_manager = models.CharField('Телефон менеджера', max_length=11)
     phone_driver = models.CharField('Телефон водителя', max_length=11)
     number_route = models.CharField('Номер маршрута', max_length=7)
@@ -60,32 +62,3 @@ class driver_step_route(models.Model):
     class Meta:
         verbose_name = 'Прохождение маршрута'
         verbose_name_plural = "Прохождение маршрутов"
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""class catalog_route_url(models.Model):
-    number_route = models.CharField('Номер маршрута', max_length=7, primary_key=True)
-    url_route = models.URLField(verbose_name='Ссылка на маршрут')
-    class Meta:
-        verbose_name = 'Справочник url-адресов'
-        verbose_name_plural = "Справочник url-адресов"
-
-class catalog_route(models.Model):
-    number_route = models.ForeignKey(catalog_route_url, on_delete=models.CASCADE)
-    number_point = models.CharField('Номер точки', max_length=7)
-    latitude = models.DecimalField('Широта', max_digits=8, decimal_places=6)
-    longitude = models.DecimalField('Долгота', max_digits=8, decimal_places=6)
-    class Meta:
-        verbose_name = 'Справочник маршрутов'
-        verbose_name_plural = "Справочник маршрутов"
-"""

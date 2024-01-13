@@ -22,10 +22,11 @@ class driver_reportForm(ModelForm):
 class catalog_route_urlForm(ModelForm):
     class Meta:
         model = catalog_route_url
-        fields = ['number_route', 'point_1', 'point_2', 'point_3', 'point_4', 'point_5', 'point_6', 'point_7', 'point_8', 'point_9', 'point_10', 'url_route']
+        fields = ['number_route', 'count_point_to_route', 'point_1', 'point_2', 'point_3', 'point_4', 'point_5', 'point_6', 'point_7', 'point_8', 'point_9', 'point_10', 'url_route', 'date_create_route']
 
         widgets = {
             "number_route": TextInput(attrs={'id': 'catalog_route', 'name': 'catalog_route', 'required': '' }),
+            "count_point_to_route": NumberInput(attrs={'id': 'count_point_to_route', 'name': 'count_point_to_route', 'required': '' }),
             "point_1": TextInput(attrs={'id': 'point_1', 'name': 'point_1', 'required': ""}),
             "point_2": TextInput(attrs={'id': 'point_2', 'name': 'point_2', 'required': False}),
             "point_3": TextInput(attrs={'id': 'point_3', 'name': 'point_3', 'required': False}),
@@ -36,17 +37,18 @@ class catalog_route_urlForm(ModelForm):
             "point_8": TextInput(attrs={'id': 'point_8', 'name': 'point_8', 'required': False}),
             "point_9": TextInput(attrs={'id': 'point_9', 'name': 'point_9', 'required': False}),
             "point_10": TextInput(attrs={'id': 'point_10', 'name': 'point_10', 'required': False}),
-            "url_route": URLInput(attrs={'id': 'url_route', 'name': 'url_route', 'required': '' })
+            "url_route": URLInput(attrs={'id': 'url_route', 'name': 'url_route', 'required': '' }),
+            "date_create_route": DateInput(attrs={'id': 'date_create_route', 'name': 'date_create_route', 'type': 'date', 'required':''})
         }
 
 class manager_taskForm(ModelForm):
     class Meta:
         model = manager_task
-        fields = ['task_number', 'date_and_time_task', 'phone_manager', 'phone_driver', 'number_route']
+        fields = ['task_number', 'date_task', 'phone_manager', 'phone_driver', 'number_route']
 
         widgets = {
             "task_number": NumberInput(attrs={'id': 'task_number', 'name': 'task_number', 'required':'' }),
-            "date_and_time_task": DateTimeInput(attrs={'id': 'date_and_time_task', 'name': 'date_and_time_task', 'type': 'datetime-local', 'required': ''}),
+            "date_task": DateInput(attrs={'id': 'date_task', 'name': 'date_task', 'type': 'date', 'required': ''}),
             "phone_manager": TextInput(attrs={'id': 'phone_manager', 'name': 'phone_manager', 'required': '' }),
             "phone_driver": TextInput(attrs={'id': 'phone_driver', 'name': 'phone_driver', 'required': '' }),
             "number_route": TextInput(attrs={'id': 'number_route', 'name': 'number_route', 'required': ''})}
