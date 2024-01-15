@@ -7,8 +7,8 @@ class driver_report(models.Model):
     check_number = models.BigIntegerField('Номер чека')
     date_check = models.DateField('Дата оплаты чека')
     sum_check = models.FloatField('Сумма чека за бензин')
-    image_check = models.ImageField('Фото чека за бензин', upload_to='images/')
-
+    image_check = models.ImageField('Фото чека за бензин', upload_to='images/',  max_length = 500)
+    date_create_driver_report = models.DateField('Дата создания отчета')
     def __str__(self):
         return self.task_number
     class Meta:

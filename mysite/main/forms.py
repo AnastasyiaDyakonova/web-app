@@ -6,7 +6,7 @@ from .models import driver_report, catalog_route_url, manager_task, driver_step_
 class driver_reportForm(ModelForm):
     class Meta:
         model = driver_report
-        fields = ['task_number', 'odometr_from', 'odometr_to', 'check_number', 'date_check', 'sum_check', 'image_check']
+        fields = ['task_number', 'odometr_from', 'odometr_to', 'check_number', 'date_check', 'sum_check', 'image_check', 'date_create_driver_report']
 
         widgets = {
             "task_number": NumberInput(attrs={'id': 'task_number', 'name': 'task_number', 'required':''}),
@@ -15,7 +15,8 @@ class driver_reportForm(ModelForm):
             "check_number": NumberInput(attrs={'id': 'check_number', 'name': 'check_number', 'required': ''}),
             "date_check": DateInput(attrs={'id': 'date_check', 'name': 'date_check', 'type': 'date', 'required':''}),
             "sum_check": NumberInput(attrs={'id': 'sum_check', 'name': 'sum_check', 'required':''}),
-            "image_check": FileInput(attrs={'id': 'image_check', 'name': 'file', 'required':''})
+            "image_check": FileInput(attrs={'id': 'image_check', 'name': 'file', 'required':''}),
+            "date_create_driver_report": DateInput(attrs={'id': 'date_create_driver_report', 'name': 'date_create_driver_report', 'type': 'date','required': ''})
         }
 
 

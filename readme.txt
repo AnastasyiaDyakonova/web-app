@@ -1,5 +1,5 @@
 Инструкция по установке:
-У вас уже должен быть установлен Oracle(он на стороне клиента), DBeaver, PyCharm, git, python(версия 3.9)
+У вас уже должен быть установлен Oracle(он на стороне клиента), DBeaver, PyCharm, Anaconda, git, python(версия 3.9)
 Переходим по ссылке https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html
 Скачиваем последнюю версию в виде архива. Архив распаковываем, папку instantclient_21_12 можно разместить по такому пути на вашем ПК(можно и свой задать-путь к этой папке понадобится далее):
 C:\Program Files\Oracle\instantclient_21_12
@@ -27,7 +27,7 @@ pip install django
 
 Далее перейдите в папку mysite и откройте файл manage.py. В этом блоке:
 lib_dir = r"C:\Program Files\Oracle\instantclient_21_12"
-замените на Ваш путь instantclient_21_12
+замените на Ваш путь instantclient_2
 
 
 Вернемся в терминал и пропишем следующие команды:

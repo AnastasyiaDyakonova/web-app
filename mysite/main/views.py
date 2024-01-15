@@ -17,7 +17,8 @@ def create(request):
                 check_number=form.cleaned_data.get("check_number"),
                 date_check=form.cleaned_data.get("date_check"),
                 sum_check=form.cleaned_data.get("sum_check"),
-                image_check = request.FILES.get("image_check")
+                image_check = request.FILES.get("image_check"),
+                date_create_driver_report=form.cleaned_data.get("date_create_driver_report")
                 #image_check=form.cleaned_data.get("image_check")
             )
             obj.save()
@@ -93,7 +94,7 @@ def driver_step_route_view(request):
 
 def select_url_route(request):
     with connection.cursor() as cursor:
-        cursor.execute("select number_route, url_route from public.main_catalog_route_url ;")
+        cursor.execute("select number_route, url_route from INTERN_TEAM8.main_catalog_route_url ;")
         data = cursor.fetchall()
     return render(request, 'main/select_url_route.html', {'data': data})
 
@@ -103,7 +104,7 @@ def select_catalog_driver(request):
                                   last_name, 
                                   username, 
                                   email 
-                            from public.users_buyer 
+                            from INTERN_TEAM8.users_user
                             where role='водитель';""")
         data = cursor.fetchall()
     return render(request, 'main/select_catalog_driver.html', {'data': data})
@@ -111,7 +112,7 @@ def select_catalog_driver(request):
 
 def select_report(request):
     with connection.cursor() as cursor:
-        cursor.execute("""select '№'|| t1.task_number || ' от ' || to_char(t1.date_and_time_task, 'dd.mm.yyyy') as number_date__task,  
+        cursor.execute("""select '№'|| t1.task_number || ' от ' || to_char(t1.date_task, 'dd.mm.yyyy') as number_date__task,  
 	   t5.first_name || ' ' ||  t5.last_name as FI, 
 	   t5.username,
 	   t2.date_and_time_route_to - t2.date_and_time_route_from as time_route,
@@ -120,19 +121,19 @@ def select_report(request):
 	   t3.sum_check, 
 	   t3.image_check,
 	   case 
-	   	when (t2.point_1::int + t2.point_2::int + t2.point_3::int + t2.point_4::int + t2.point_5::int + t2.point_6::int + t2.point_7::int + t2.point_8::int + t2.point_9::int + t2.point_10::int) = count_point_to_route then 'Пройден'
+	   	when (t2.point_1 + t2.point_2 + t2.point_3 + t2.point_4 + t2.point_5 + t2.point_6 + t2.point_7 + t2.point_8 + t2.point_9 + t2.point_10) = count_point_to_route then 'Пройден'
 	   else 'Не пройден'
 	   end result,
 	   t1.number_route,
 	   t4.url_route
-from public.main_manager_task t1
-left join public.main_driver_step_route t2
+from INTERN_TEAM8.main_manager_task t1
+left join INTERN_TEAM8.main_driver_step_route t2
 on t1.task_number = t2.task_number
-left join public.main_driver_report t3
+left join INTERN_TEAM8.main_driver_report t3
 on t2.task_number = t3.task_number 
-left join public.main_catalog_route_url t4
+left join INTERN_TEAM8.main_catalog_route_url t4
 on t1.number_route = t4.number_route 
-left join public.users_buyer t5
+left join INTERN_TEAM8.users_user t5
 on t1.phone_driver = t5.username 
 """)
         data = cursor.fetchall()

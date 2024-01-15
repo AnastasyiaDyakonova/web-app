@@ -1,8 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Buyer
+from .models import User
 
 class RegisterForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
-        model = Buyer
+        model = User
         fields = ('username', 'last_name', 'first_name', 'email', 'role')
