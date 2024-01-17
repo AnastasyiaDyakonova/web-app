@@ -2,6 +2,9 @@
 {% block title %} Страница водителя {% endblock %}
 {% block image %} https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2elt6nR-Dw3FLhV8EXh3zNYiwlyARkFGXsQ&usqp=CAU {% endblock %}
 {% block role %}Водитель{% endblock %}
-{% block button %} <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/step'">Пройти маршрут и отчитаться </button>{% endblock %}
+{% block button %}
+ <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/select_driver_task_url', '_blank')">Получить задание</button>
+{% endblock %}
 {% block button1 %}
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/step'">Пройти маршрут и отчитаться </button>
 {% endblock %}

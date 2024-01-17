@@ -20,7 +20,8 @@
                 <th>Имя и фамилия водителя</th>
                 <th>Телефон водителя</th>
                 <th>Время в пути</th>
-                <th>Расстояние в км</th>
+                <th>Расстояние, км</th>
+                <th>Расход бензина, л</th>
                 <th>Номер и дата чека</th>
                 <th>Сумма чека</th>
                 <th>Фото чека</th>
@@ -39,8 +40,8 @@
                    <!-- <td><a href="{{ row.7 }}" target="_blank">{{ row.7.file }}</a></td> -->
                     <td>{{ row.7 }}</td>
                     <td>{{ row.8 }}</td>
-
-                    <td><a href="{{ row.10 }}" target="_blank">{{ row.9 }}</a></td>
+                    <td>{{ row.9 }}</td>
+                    <td><a href="{{ row.11 }}" target="_blank">{{ row.10 }}</a></td>
                 </tr>
             {% endfor %}
         </table>

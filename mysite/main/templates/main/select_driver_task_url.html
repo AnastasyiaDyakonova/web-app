@@ -1,0 +1,29 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/catalog.css' %}">
+    <title>Назначенные задания</title>
+</head>
+<body>
+<h1> Назначенные задания для {{current_user_f}} {{current_user_l}} </h1>
+
+<table border="1">
+        <tr>
+            <th>Номер задачи</th>
+            <th>Номер и ссылка на маршрут</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+                <td>{{ row.0 }} </td>
+                <td><a href="{{ row.2 }}" target="_blank">{{ row.1 }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

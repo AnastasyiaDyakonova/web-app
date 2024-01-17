@@ -12,10 +12,6 @@ C:\Program Files\Oracle\instantclient_21_12
 Должен появиться проект в этой папке.
 Далее открываем PyCharm, нажимаем на File -> Open, выбираем путь к приложению. Нажимаем ок -> This Window. Должен открыться скелет проекта.
 Нажимаем на alt+f12, должно открыться внизу окно терминала. Проверьте Ваш путь. Должен заканчиваться на \web-app>
-Вводим команды:
-python -m pip install cx_Oracle --upgrade
-pip install sqlalchemy
-pip install pandas
 Далее вводим команду:
 python -m venv venv
 Она создает виртуальное окружение проекта. В скелете приложения должна появиться папка venv.
@@ -23,7 +19,6 @@ python -m venv venv
 venv\Scripts\activate
 python -m pip install --upgrade pip
 pip install -r requirement.txt
-pip install django
 
 Далее перейдите в папку mysite и откройте файл manage.py. В этом блоке:
 lib_dir = r"C:\Program Files\Oracle\instantclient_21_12"
@@ -34,6 +29,7 @@ lib_dir = r"C:\Program Files\Oracle\instantclient_21_12"
  cd mysite
  python manage.py makemigrations
  python manage.py migrate
+ python manage.py runscript createtable (скрипт для создания слоя сырых данных и хранилища)
  python manage.py runserver
 
 После последней команды должно получиться:
@@ -44,4 +40,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 
 Переходим по ссылке http://127.0.0.1:8000/ и тестим.
+
+Для того, чтобы запустить скрипт обработки хранилища данных на ежедневной основе(в 22-51) нужно перейти на страницу http://127.0.0.1:8000/start_job/.
+Для того, чтобы прекратить - http://127.0.0.1:8000/stop_job/
 

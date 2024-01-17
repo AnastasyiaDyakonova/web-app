@@ -59,17 +59,8 @@ aside.left ul li{
 }
 
 
-
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Разделение на две равные части */
-}
-
-.routing {
-  background-color: lightblue; /* Цвет фона первой части */
-  height: 640px;
-}
-
 .ymap {
   background-color: lightgreen; /* Цвет фона второй части */
+  weight:100%;
+
 }

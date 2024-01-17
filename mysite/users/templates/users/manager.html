@@ -6,3 +6,9 @@
 {% block button1 %}
 <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/task'">Создать задание</button>
 {% endblock %}
+{% block button2 %}
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/task'">Задания за предыдущий период</button>
+{% endblock %}
+{% block button3 %}
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/task'">Отчет за предыдущий месяц</button>
+{% endblock %}

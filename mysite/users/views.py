@@ -10,12 +10,14 @@ def home(request):
 @login_required
 def profile_views(request):
     user = request.user
+    current_user = request.user.first_name
+
     if user.role == 'менеджер':
         return render(request, 'users/manager.html')
     elif user.role == 'водитель':
         return render(request, 'users/driver.html')
     else:
-        return render(request, 'users/profile.html')
+        return render(request, 'users/profile.html', {'current_user':current_user})
 
 class RegisterView(FormView):
     form_class = RegisterForm

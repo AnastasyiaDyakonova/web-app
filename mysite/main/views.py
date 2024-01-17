@@ -1,8 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from .forms import driver_reportForm, catalog_route_urlForm, manager_taskForm, driver_step_routeForm
 from .models import driver_report
 from django.db import connection
+from django.http import HttpResponse
+from .scripts.scheduler import start_scheduler, stop_scheduler
 
 def create(request):
     error = ''
@@ -94,47 +97,45 @@ def driver_step_route_view(request):
 
 def select_url_route(request):
     with connection.cursor() as cursor:
-        cursor.execute("select number_route, url_route from INTERN_TEAM8.main_catalog_route_url ;")
+        cursor.execute("select * from INTERN_TEAM8.select_url_route")
         data = cursor.fetchall()
     return render(request, 'main/select_url_route.html', {'data': data})
 
 def select_catalog_driver(request):
     with connection.cursor() as cursor:
-        cursor.execute("""select first_name, 
-                                  last_name, 
-                                  username, 
-                                  email 
-                            from INTERN_TEAM8.users_user
-                            where role='водитель';""")
+        cursor.execute("select * from INTERN_TEAM8.select_catalog_driver")
         data = cursor.fetchall()
     return render(request, 'main/select_catalog_driver.html', {'data': data})
 
 
 def select_report(request):
     with connection.cursor() as cursor:
-        cursor.execute("""select '№'|| t1.task_number || ' от ' || to_char(t1.date_task, 'dd.mm.yyyy') as number_date__task,  
-	   t5.first_name || ' ' ||  t5.last_name as FI, 
-	   t5.username,
-	   t2.date_and_time_route_to - t2.date_and_time_route_from as time_route,
-	   t3.odometr_to - t3.odometr_from as distance_km,
-	   '№'|| t3.check_number || ' от ' || to_char(t3.date_check, 'dd.mm.yyyy') as number_date_and_time_check,
-	   t3.sum_check, 
-	   t3.image_check,
-	   case 
-	   	when (t2.point_1 + t2.point_2 + t2.point_3 + t2.point_4 + t2.point_5 + t2.point_6 + t2.point_7 + t2.point_8 + t2.point_9 + t2.point_10) = count_point_to_route then 'Пройден'
-	   else 'Не пройден'
-	   end result,
-	   t1.number_route,
-	   t4.url_route
-from INTERN_TEAM8.main_manager_task t1
-left join INTERN_TEAM8.main_driver_step_route t2
-on t1.task_number = t2.task_number
-left join INTERN_TEAM8.main_driver_report t3
-on t2.task_number = t3.task_number 
-left join INTERN_TEAM8.main_catalog_route_url t4
-on t1.number_route = t4.number_route 
-left join INTERN_TEAM8.users_user t5
-on t1.phone_driver = t5.username 
-""")
+        cursor.execute("select * from INTERN_TEAM8.select_report ")
         data = cursor.fetchall()
     return render(request, 'main/select_report.html', {'data': data})
+
+@login_required
+def select_driver_task_url(request):
+    current_user = request.user.username
+    current_user_f = request.user.first_name
+    current_user_l = request.user.last_name
+    with connection.cursor() as cursor:
+        cursor.execute("""SELECT t1.task_number, t1.number_route, t3.url_route
+from INTERN_TEAM8.MAIN_MANAGER_TASK t1 
+LEFT JOIN INTERN_TEAM8.MAIN_DRIVER_REPORT t2
+ON t1.TASK_NUMBER = t2.TASK_NUMBER 
+LEFT JOIN INTERN_TEAM8.MAIN_CATALOG_ROUTE_URL t3
+ON t1.NUMBER_ROUTE = t3.NUMBER_ROUTE 
+WHERE t2.ID IS NULL 
+AND phone_driver = %s""", [current_user])
+        data = cursor.fetchall()
+    return render(request, 'main/select_driver_task_url.html', {'data': data, 'current_user_f':current_user_f, 'current_user_l':current_user_l})
+
+
+def start_job(request):
+    start_scheduler()
+    return HttpResponse("Job started!")
+
+def stop_job(request):
+    stop_scheduler()
+    return HttpResponse("Job stopped!")
