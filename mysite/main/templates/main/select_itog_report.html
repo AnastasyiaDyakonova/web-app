@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/catalog.css' %}">
+    <style>
+    button{
+    background: blue
+    }
+
+   .btn.btn-sm.btn-primary{
+    font-size:20px;
+    height: 40px;
+    width: 15%;
+}
+  </style>
+    <title>Отчет за предыдущий месяц</title>
+</head>
+<body>
+<h1> Отчет за предыдущий месяц </h1>
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/select_dwh_report/export_to_excel_itog', '_blank')">Скачать отчет</button>
+<table border="1">
+        <tr>
+            <th>Месяц</th>
+            <th>Количество маршрутов</th>
+            <th>Суммарное время в пути, ч</th>
+            <th>Общее пройденное расстояние, км</th>
+            <th>Суммарные затраты, руб</th>
+            <th>Общий объем затраченного бензина, л</th>
+            <th>Среднее время маршрута, ч</th>
+            <th>Среднее расстояние маршрута, км</th>
+            <th>Средний расход бензина на 1 маршрут, л</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+                <td>{{ row.0 }} </td>
+                <td>{{ row.1 }} </td>
+                <td>{{ row.2 }} </td>
+                <td>{{ row.3 }} </td>
+                <td>{{ row.4 }} </td>
+                <td>{{ row.5 }} </td>
+                <td>{{ row.6 }} </td>
+                <td>{{ row.7 }} </td>
+                <td>{{ row.8 }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

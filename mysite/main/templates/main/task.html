@@ -9,7 +9,7 @@
     <h6>* Скопируйте из справочника маршрутов номер назначаемого маршрута</h6>
     <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task/select_url_route', '_blank')">Справочник маршрутов</button>
     <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task/select_catalog_driver', '_blank')">Справочник водителей</button><br>
-    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task/select_report', '_blank')">Посмотеть отчет</button>
+    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task/select_report', '_blank')">Последние 10 заданий</button>
     {% csrf_token %}
     {% for field in form3 %}
     <div class="fieldWrapper">

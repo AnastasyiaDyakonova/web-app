@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="{% static 'main/css/catalog.css' %}">
+        <style>
+    button{
+    background: blue
+    }
+
+   .btn.btn-sm.btn-primary{
+    font-size:20px;
+    height: 40px;
+    width: 15%;
+}
+    <title>Отчет по заданиям</title>
+</head>
+<body>
+ </style>
+
+<h1> Отчет по заданиям </h1>
+<form method="post" enctype= multipart/form-data>
+    {% csrf_token %}
+    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/select_dwh_report/export_to_excel_task', '_blank')">Скачать отчет</button>
+    <table border="1">
+            <tr>
+                <th>Номер задания</th>
+                <th>Дата задания</th>
+                <th>Имя и фамилия водителя</th>
+                <th>Телефон водителя</th>
+                <th>Время в пути</th>
+                <th>Расстояние, км</th>
+                <th>Расход бензина, л</th>
+                <th>Номер и дата чека</th>
+                <th>Сумма чека</th>
+                <th>Фото чека</th>
+                <th>Результат прохождения маршрута</th>
+                <th>Номер и url-маршрута</th>
+            </tr>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row.0 }} </td>
+                    <td>{{ row.1 }} </td>
+                    <td>{{ row.2 }} </td>
+                    <td>{{ row.3 }} </td>
+                    <td>{{ row.4 }} </td>
+                    <td>{{ row.5 }} </td>
+                    <td>{{ row.6 }} </td>
+                    <td>{{ row.7 }}</td>
+                    <td>{{ row.8 }}</td>
+                    <td>{{ row.9 }}</td>
+                    <td>{{ row.10 }}</td>
+                    <td><a href="{{ row.12 }}" target="_blank">{{ row.11 }}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+</form>
+</body>
+</html>

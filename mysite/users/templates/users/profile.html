@@ -11,7 +11,8 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <aside class="left">
+<div style="display: flex;">
+    <aside class="left" style="flex: 0;">
         <div class="container mt-5 d-flex justify-content-center">
                 <div class="card p-3">
                     <div class="d-flex align-items-center">
@@ -38,10 +39,11 @@
             </ul>
         </div>
     </aside>
-    <main>
+    <main class="mymap" style="flex: 1;">
             <div class="ymap">
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A493c724964bb898c20efe7f2d6b5d67c611f020b68553e9b881f4ddede7a4dd6&amp;width=925&amp;height=640&amp;lang=ru_RU&amp;scroll=true"></script>
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A493c724964bb898c20efe7f2d6b5d67c611f020b68553e9b881f4ddede7a4dd6&amp;width=928&amp;height=641&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
     </main>
+    </div>
     </body>
 </html>

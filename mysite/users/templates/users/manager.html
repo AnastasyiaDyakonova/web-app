@@ -2,13 +2,15 @@
 {% block title %} Страница менеджера {% endblock %}
 {% block image %} https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuWkeJjjMe5DjkYbYHrusZ4gY1Eox-fIVknnIBDV-C1LsHbCUJv1puoA8abD1L4brFGAM&usqp=CAU {% endblock %}
 {% block role %}Менеджер{% endblock %}
-{% block button %} <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/route'">Добавить маршрут</button> {% endblock %}
+{% block button %}
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/route', '_blank')">Добавить маршрут</button>
+{% endblock %}
 {% block button1 %}
-<button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/task'">Создать задание</button>
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/task', '_blank')">Создать задание</button>
 {% endblock %}
 {% block button2 %}
-<button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/task'">Задания за предыдущий период</button>
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/select_dwh_report', '_blank')">Отчет по заданиям(на вчера)</button>
 {% endblock %}
 {% block button3 %}
-<button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='{% url 'logout' %}?next=/profile/task'">Отчет за предыдущий месяц</button>
+<button class="btn btn-sm btn-primary w-100 ml-2" onclick="window.open('{% url 'logout' %}?next=/profile/select_itog_report', '_blank')">Отчет за предыдущий месяц</button>
 {% endblock %}

@@ -6,6 +6,7 @@ from .models import driver_report
 from django.db import connection
 from django.http import HttpResponse
 from .scripts.scheduler import start_scheduler, stop_scheduler
+import pandas as pd
 
 def create(request):
     error = ''
@@ -25,7 +26,7 @@ def create(request):
                 #image_check=form.cleaned_data.get("image_check")
             )
             obj.save()
-            return redirect('/profile')
+            return redirect('/success')
         else:
             error = 'Неверно заполнена форма!!!'
     else:
@@ -47,7 +48,7 @@ def route(request):
 
         if form2.is_valid():
             form2.save()
-            return redirect('/profile')
+            return redirect('/success')
         else:
             error = 'Неверно заполнена форма!!!'
     else:
@@ -66,7 +67,7 @@ def manager_task_view(request):
 
         if form3.is_valid() :
             form3.save()
-            return redirect('/profile')
+            return redirect('/success')
         else:
             error = 'Неверно заполнена форма!!!'
     else:
@@ -95,6 +96,9 @@ def driver_step_route_view(request):
     }
     return render(request, 'main/step.html', data)
 
+def success(request):
+    return render(request, 'main/success.html')
+
 def select_url_route(request):
     with connection.cursor() as cursor:
         cursor.execute("select * from INTERN_TEAM8.select_url_route")
@@ -108,9 +112,10 @@ def select_catalog_driver(request):
     return render(request, 'main/select_catalog_driver.html', {'data': data})
 
 
+
 def select_report(request):
     with connection.cursor() as cursor:
-        cursor.execute("select * from INTERN_TEAM8.select_report ")
+        cursor.execute("SELECT * FROM INTERN_TEAM8.select_report")
         data = cursor.fetchall()
     return render(request, 'main/select_report.html', {'data': data})
 
@@ -131,6 +136,53 @@ AND phone_driver = %s""", [current_user])
         data = cursor.fetchall()
     return render(request, 'main/select_driver_task_url.html', {'data': data, 'current_user_f':current_user_f, 'current_user_l':current_user_l})
 
+
+def select_dwh_report(request):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM select_dwh_report")
+        data = cursor.fetchall()
+    return render(request, 'main/select_dwh_report.html', {'data': data})
+
+def select_itog_report(request):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM INTERN_TEAM8.select_itog_report")
+        data = cursor.fetchall()
+    return render(request, 'main/select_itog_report.html', {'data': data})
+
+
+def export_to_excel_task(request):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM select_dwh_report")
+        data = cursor.fetchall()
+        data = pd.DataFrame(data,
+                            columns=['Номер задания', 'Дата задания', 'Имя и фамилия водителя', 'Телефон водителя',
+                                     'Время в пути', 'Расстояние, км', 'Расход бензина, л', 'Номер и дата чека',
+                                     'Сумма чека', 'Фото чека', 'Результат прохождения маршрута',
+                                     'Номер маршрута', 'url-маршрута'])
+
+    excel_file_path = 'report_task_data.xlsx'
+    data.to_excel(excel_file_path, index=False, sheet_name='Sheet1', header=True, engine='openpyxl')
+    with open(excel_file_path, 'rb') as excel_data:
+        response = HttpResponse(excel_data.read(),
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="report_task_data.xlsx"'
+    return response
+
+def export_to_excel_itog(request):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM select_itog_report")
+        data = cursor.fetchall()
+        data = pd.DataFrame(data,
+                            columns=['Месяц', 'Количество маршрутов', 'Суммарное время в пути, ч', 'Общее пройденное расстояние, км',
+                                     'Суммарные затраты, руб', 'Общий объем затраченного бензина, л', 'Среднее время маршрута, ч',
+                                     'Среднее расстояние маршрута, км', 'Средний расход бензина на 1 маршрут, л'])
+
+    excel_file_path = 'report_itog_data.xlsx'
+    data.to_excel(excel_file_path, index=False, sheet_name='Sheet1', header=True, engine='openpyxl')
+    with open(excel_file_path, 'rb') as excel_data:
+        response = HttpResponse(excel_data.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="report_itog_data.xlsx"'
+    return response
 
 def start_job(request):
     start_scheduler()
