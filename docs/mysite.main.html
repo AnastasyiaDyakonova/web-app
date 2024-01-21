@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+<html lang="ru" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Директория main: &#8212; документация mysite 1.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=9ca2116e"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=29b1f277"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Директория main.migrations:" href="mysite.main.migrations.html" />
+    <link rel="prev" title="Директория mysite:" href="mysite.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="main">
+<h1>Директория main:<a class="headerlink" href="#main" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2>Субпакеты:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mysite.main.migrations.html">Директория main.migrations:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysite.main.scripts.html">Директория main.scripts:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysite.main.static.html">Директория main.static:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysite.main.templates.html">Директория main.templates:</a></li>
+</ul>
+</div>
+</section>
+<section id="id2">
+<h2>Субмодули:<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-main.admin">
+<span id="main-admin"></span><h2>Модуль main.admin<a class="headerlink" href="#module-main.admin" title="Link to this heading">¶</a></h2>
+<p>В данном модуле регистрируются модели для работы в административной части сайта.</p>
+</section>
+<section id="module-main.apps">
+<span id="main-apps"></span><h2>Модуль main.apps<a class="headerlink" href="#module-main.apps" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.apps.MainConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.apps.</span></span><span class="sig-name descname"><span class="pre">MainConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.apps.MainConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<p>Задается тип автоинкрементного первичного ключа, который будет использоваться моделями в приложении.
+Этот класс конфигурации соответствует приложению Django с именем «main».</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.apps.MainConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#main.apps.MainConfig.default_auto_field" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.apps.MainConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'main'</span></em><a class="headerlink" href="#main.apps.MainConfig.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-main.forms">
+<span id="main-forms"></span><h2>Модуль main.forms<a class="headerlink" href="#module-main.forms" title="Link to this heading">¶</a></h2>
+<p>В данном модуле настраивается основной интерфейс для созданных моделей, прописываются нужные поля, настраиваются виджеты.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.forms.catalog_route_urlForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.forms.</span></span><span class="sig-name descname"><span class="pre">catalog_route_urlForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.forms.catalog_route_urlForm" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/forms/modelforms/#django.forms.ModelForm" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></a></p>
+<p>Создается форма для модели catalog_route_url.</p>
+<p><strong>Form fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">number_route</span></code>: Номер маршрута (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count_point_to_route</span></code>: Количество точек на маршруте (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_1</span></code>: Точка 1 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_2</span></code>: Точка 2 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_3</span></code>: Точка 3 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_4</span></code>: Точка 4 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_5</span></code>: Точка 5 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_6</span></code>: Точка 6 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_7</span></code>: Точка 7 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_8</span></code>: Точка 8 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_9</span></code>: Точка 9 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_10</span></code>: Точка 10 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url_route</span></code>: Ссылка на маршрут (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.URLField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">URLField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_create_route</span></code>: Дата создания маршрута (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a>)</p></li>
+</ul>
+<dl class="py property">
+<dt class="sig sig-object py" id="main.forms.catalog_route_urlForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main.forms.catalog_route_urlForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.forms.driver_reportForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.forms.</span></span><span class="sig-name descname"><span class="pre">driver_reportForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.forms.driver_reportForm" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/forms/modelforms/#django.forms.ModelForm" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></a></p>
+<p>Создается форма для модели driver_report.</p>
+<p><strong>Form fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">task_number</span></code>: Номер задачи (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odometr_from</span></code>: Одометр на начало маршрута (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odometr_to</span></code>: Одометр на конец маршрута (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check_number</span></code>: Номер чека (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_check</span></code>: Дата оплаты чека (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum_check</span></code>: Сумма чека за бензин (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.FloatField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FloatField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image_check</span></code>: Фото чека за бензин (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ImageField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_create_driver_report</span></code>: Дата создания отчета (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a>)</p></li>
+</ul>
+<dl class="py property">
+<dt class="sig sig-object py" id="main.forms.driver_reportForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main.forms.driver_reportForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.forms.driver_step_routeForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.forms.</span></span><span class="sig-name descname"><span class="pre">driver_step_routeForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.forms.driver_step_routeForm" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/forms/modelforms/#django.forms.ModelForm" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></a></p>
+<p>Создается форма для модели driver_step_route.</p>
+<p><strong>Form fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">task_number</span></code>: Номер задачи (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_and_time_route_from</span></code>: Дата и время начала маршрута (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.DateTimeField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_1</span></code>: Точка 1 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_2</span></code>: Точка 2 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_3</span></code>: Точка 3 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_4</span></code>: Точка 4 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_5</span></code>: Точка 5 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_6</span></code>: Точка 6 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_7</span></code>: Точка 7 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_8</span></code>: Точка 8 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_9</span></code>: Точка 9 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point_10</span></code>: Точка 10 (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_and_time_route_to</span></code>: Дата и время конца маршрута (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.DateTimeField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a>)</p></li>
+</ul>
+<dl class="py property">
+<dt class="sig sig-object py" id="main.forms.driver_step_routeForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main.forms.driver_step_routeForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.forms.manager_taskForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.forms.</span></span><span class="sig-name descname"><span class="pre">manager_taskForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.forms.manager_taskForm" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/forms/modelforms/#django.forms.ModelForm" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></a></p>
+<p>Создается форма для модели manager_task.</p>
+<p><strong>Form fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">task_number</span></code>: Номер задачи (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_task</span></code>: Дата задачи (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phone_manager</span></code>: Телефон менеджера (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phone_driver</span></code>: Телефон водителя (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number_route</span></code>: Номер маршрута (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+</ul>
+<dl class="py property">
+<dt class="sig sig-object py" id="main.forms.manager_taskForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main.forms.manager_taskForm.media" title="Link to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-main.models">
+<span id="main-models"></span><h2>Модуль main.models<a class="headerlink" href="#module-main.models" title="Link to this heading">¶</a></h2>
+<p>В данном модуле создаются модели, с помощью которых осуществляется взаимодействие с базой данных</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.catalog_route_url">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">catalog_route_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.catalog_route_url" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p>Модель для создания справочника маршрутов.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number_route</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Primary key: Номер маршрута</p></li>
+<li><p><strong>count_point_to_route</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(в Django v5.0)"><em>IntegerField</em></a>) – Количество точек на маршруте</p></li>
+<li><p><strong>point_1</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 1</p></li>
+<li><p><strong>point_2</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 2</p></li>
+<li><p><strong>point_3</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 3</p></li>
+<li><p><strong>point_4</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 4</p></li>
+<li><p><strong>point_5</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 5</p></li>
+<li><p><strong>point_6</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 6</p></li>
+<li><p><strong>point_7</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 7</p></li>
+<li><p><strong>point_8</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 8</p></li>
+<li><p><strong>point_9</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 9</p></li>
+<li><p><strong>point_10</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Точка 10</p></li>
+<li><p><strong>url_route</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.URLField" title="(в Django v5.0)"><em>URLField</em></a>) – Ссылка на маршрут</p></li>
+<li><p><strong>date_create_route</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><em>DateField</em></a>) – Дата создания маршрута</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.catalog_route_url.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.catalog_route_url.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.count_point_to_route">
+<span class="sig-name descname"><span class="pre">count_point_to_route</span></span><a class="headerlink" href="#main.models.catalog_route_url.count_point_to_route" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a></p>
+<p>Количество точек на маршруте</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.date_create_route">
+<span class="sig-name descname"><span class="pre">date_create_route</span></span><a class="headerlink" href="#main.models.catalog_route_url.date_create_route" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a></p>
+<p>Дата создания маршрута</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.get_next_by_date_create_route">
+<span class="sig-name descname"><span class="pre">get_next_by_date_create_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_create_route&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.catalog_route_url.get_next_by_date_create_route" title="Link to this definition">¶</a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#main.models.catalog_route_url.date_create_route" title="main.models.catalog_route_url.date_create_route"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_create_route</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.get_previous_by_date_create_route">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_create_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_create_route&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.catalog_route_url.get_previous_by_date_create_route" title="Link to this definition">¶</a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#main.models.catalog_route_url.date_create_route" title="main.models.catalog_route_url.date_create_route"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_create_route</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.number_route">
+<span class="sig-name descname"><span class="pre">number_route</span></span><a class="headerlink" href="#main.models.catalog_route_url.number_route" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Primary key: Номер маршрута</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#main.models.catalog_route_url.objects" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_1">
+<span class="sig-name descname"><span class="pre">point_1</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_1" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_10">
+<span class="sig-name descname"><span class="pre">point_10</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_10" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 10</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_2">
+<span class="sig-name descname"><span class="pre">point_2</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_2" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_3">
+<span class="sig-name descname"><span class="pre">point_3</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_3" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_4">
+<span class="sig-name descname"><span class="pre">point_4</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_4" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_5">
+<span class="sig-name descname"><span class="pre">point_5</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_5" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_6">
+<span class="sig-name descname"><span class="pre">point_6</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_6" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_7">
+<span class="sig-name descname"><span class="pre">point_7</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_7" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 7</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_8">
+<span class="sig-name descname"><span class="pre">point_8</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_8" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 8</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.point_9">
+<span class="sig-name descname"><span class="pre">point_9</span></span><a class="headerlink" href="#main.models.catalog_route_url.point_9" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Точка 9</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.catalog_route_url.url_route">
+<span class="sig-name descname"><span class="pre">url_route</span></span><a class="headerlink" href="#main.models.catalog_route_url.url_route" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.URLField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">URLField</span></code></a></p>
+<p>Ссылка на маршрут</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.driver_report">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">driver_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_report" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p>Модель для заполнения отчета водителя.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(в Django v5.0)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>task_number</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><em>BigIntegerField</em></a>) – Номер задачи</p></li>
+<li><p><strong>odometr_from</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><em>BigIntegerField</em></a>) – Одометр на начало маршрута</p></li>
+<li><p><strong>odometr_to</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><em>BigIntegerField</em></a>) – Одометр на конец маршрута</p></li>
+<li><p><strong>check_number</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><em>BigIntegerField</em></a>) – Номер чека</p></li>
+<li><p><strong>date_check</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><em>DateField</em></a>) – Дата оплаты чека</p></li>
+<li><p><strong>sum_check</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.FloatField" title="(в Django v5.0)"><em>FloatField</em></a>) – Сумма чека за бензин</p></li>
+<li><p><strong>image_check</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ImageField" title="(в Django v5.0)"><em>ImageField</em></a>) – Фото чека за бензин</p></li>
+<li><p><strong>date_create_driver_report</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><em>DateField</em></a>) – Дата создания отчета</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.driver_report.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.driver_report.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.driver_report.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.driver_report.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.check_number">
+<span class="sig-name descname"><span class="pre">check_number</span></span><a class="headerlink" href="#main.models.driver_report.check_number" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigIntegerField</span></code></a></p>
+<p>Номер чека</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.date_check">
+<span class="sig-name descname"><span class="pre">date_check</span></span><a class="headerlink" href="#main.models.driver_report.date_check" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a></p>
+<p>Дата оплаты чека</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.date_create_driver_report">
+<span class="sig-name descname"><span class="pre">date_create_driver_report</span></span><a class="headerlink" href="#main.models.driver_report.date_create_driver_report" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a></p>
+<p>Дата создания отчета</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_report.get_next_by_date_check">
+<span class="sig-name descname"><span class="pre">get_next_by_date_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_check&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_report.get_next_by_date_check" title="Link to this definition">¶</a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#main.models.driver_report.date_check" title="main.models.driver_report.date_check"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_check</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_report.get_next_by_date_create_driver_report">
+<span class="sig-name descname"><span class="pre">get_next_by_date_create_driver_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_create_driver_report&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_report.get_next_by_date_create_driver_report" title="Link to this definition">¶</a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#main.models.driver_report.date_create_driver_report" title="main.models.driver_report.date_create_driver_report"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_create_driver_report</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_report.get_previous_by_date_check">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_check&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_report.get_previous_by_date_check" title="Link to this definition">¶</a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#main.models.driver_report.date_check" title="main.models.driver_report.date_check"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_check</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_report.get_previous_by_date_create_driver_report">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_create_driver_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_create_driver_report&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_report.get_previous_by_date_create_driver_report" title="Link to this definition">¶</a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#main.models.driver_report.date_create_driver_report" title="main.models.driver_report.date_create_driver_report"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_create_driver_report</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#main.models.driver_report.id" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.image_check">
+<span class="sig-name descname"><span class="pre">image_check</span></span><a class="headerlink" href="#main.models.driver_report.image_check" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ImageField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageField</span></code></a></p>
+<p>Фото чека за бензин</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#main.models.driver_report.objects" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.odometr_from">
+<span class="sig-name descname"><span class="pre">odometr_from</span></span><a class="headerlink" href="#main.models.driver_report.odometr_from" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigIntegerField</span></code></a></p>
+<p>Одометр на начало маршрута</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.odometr_to">
+<span class="sig-name descname"><span class="pre">odometr_to</span></span><a class="headerlink" href="#main.models.driver_report.odometr_to" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigIntegerField</span></code></a></p>
+<p>Одометр на конец маршрута</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.sum_check">
+<span class="sig-name descname"><span class="pre">sum_check</span></span><a class="headerlink" href="#main.models.driver_report.sum_check" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.FloatField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FloatField</span></code></a></p>
+<p>Сумма чека за бензин</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_report.task_number">
+<span class="sig-name descname"><span class="pre">task_number</span></span><a class="headerlink" href="#main.models.driver_report.task_number" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigIntegerField</span></code></a></p>
+<p>Номер задачи</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.driver_step_route">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">driver_step_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_step_route" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p>Модель для создания шагов маршрута.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_number</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><em>BigIntegerField</em></a>) – Primary key: Номер задачи</p></li>
+<li><p><strong>date_and_time_route_from</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(в Django v5.0)"><em>DateTimeField</em></a>) – Дата и время начала маршрута</p></li>
+<li><p><strong>point_1</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 1</p></li>
+<li><p><strong>point_2</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 2</p></li>
+<li><p><strong>point_3</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 3</p></li>
+<li><p><strong>point_4</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 4</p></li>
+<li><p><strong>point_5</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 5</p></li>
+<li><p><strong>point_6</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 6</p></li>
+<li><p><strong>point_7</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 7</p></li>
+<li><p><strong>point_8</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 8</p></li>
+<li><p><strong>point_9</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 9</p></li>
+<li><p><strong>point_10</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><em>BooleanField</em></a>) – Точка 10</p></li>
+<li><p><strong>date_and_time_route_to</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(в Django v5.0)"><em>DateTimeField</em></a>) – Дата и время конца маршрута</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.driver_step_route.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.driver_step_route.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.driver_step_route.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.driver_step_route.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.date_and_time_route_from">
+<span class="sig-name descname"><span class="pre">date_and_time_route_from</span></span><a class="headerlink" href="#main.models.driver_step_route.date_and_time_route_from" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Дата и время начала маршрута</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.date_and_time_route_to">
+<span class="sig-name descname"><span class="pre">date_and_time_route_to</span></span><a class="headerlink" href="#main.models.driver_step_route.date_and_time_route_to" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Дата и время конца маршрута</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_step_route.get_next_by_date_and_time_route_from">
+<span class="sig-name descname"><span class="pre">get_next_by_date_and_time_route_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">date_and_time_route_from&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_step_route.get_next_by_date_and_time_route_from" title="Link to this definition">¶</a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#main.models.driver_step_route.date_and_time_route_from" title="main.models.driver_step_route.date_and_time_route_from"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_and_time_route_from</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_step_route.get_next_by_date_and_time_route_to">
+<span class="sig-name descname"><span class="pre">get_next_by_date_and_time_route_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">date_and_time_route_to&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_step_route.get_next_by_date_and_time_route_to" title="Link to this definition">¶</a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#main.models.driver_step_route.date_and_time_route_to" title="main.models.driver_step_route.date_and_time_route_to"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_and_time_route_to</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_step_route.get_previous_by_date_and_time_route_from">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_and_time_route_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">date_and_time_route_from&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_step_route.get_previous_by_date_and_time_route_from" title="Link to this definition">¶</a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#main.models.driver_step_route.date_and_time_route_from" title="main.models.driver_step_route.date_and_time_route_from"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_and_time_route_from</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.driver_step_route.get_previous_by_date_and_time_route_to">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_and_time_route_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">date_and_time_route_to&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.driver_step_route.get_previous_by_date_and_time_route_to" title="Link to this definition">¶</a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#main.models.driver_step_route.date_and_time_route_to" title="main.models.driver_step_route.date_and_time_route_to"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_and_time_route_to</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#main.models.driver_step_route.objects" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_1">
+<span class="sig-name descname"><span class="pre">point_1</span></span><a class="headerlink" href="#main.models.driver_step_route.point_1" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_10">
+<span class="sig-name descname"><span class="pre">point_10</span></span><a class="headerlink" href="#main.models.driver_step_route.point_10" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 10</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_2">
+<span class="sig-name descname"><span class="pre">point_2</span></span><a class="headerlink" href="#main.models.driver_step_route.point_2" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_3">
+<span class="sig-name descname"><span class="pre">point_3</span></span><a class="headerlink" href="#main.models.driver_step_route.point_3" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_4">
+<span class="sig-name descname"><span class="pre">point_4</span></span><a class="headerlink" href="#main.models.driver_step_route.point_4" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_5">
+<span class="sig-name descname"><span class="pre">point_5</span></span><a class="headerlink" href="#main.models.driver_step_route.point_5" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_6">
+<span class="sig-name descname"><span class="pre">point_6</span></span><a class="headerlink" href="#main.models.driver_step_route.point_6" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_7">
+<span class="sig-name descname"><span class="pre">point_7</span></span><a class="headerlink" href="#main.models.driver_step_route.point_7" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 7</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_8">
+<span class="sig-name descname"><span class="pre">point_8</span></span><a class="headerlink" href="#main.models.driver_step_route.point_8" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 8</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.point_9">
+<span class="sig-name descname"><span class="pre">point_9</span></span><a class="headerlink" href="#main.models.driver_step_route.point_9" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Точка 9</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.driver_step_route.task_number">
+<span class="sig-name descname"><span class="pre">task_number</span></span><a class="headerlink" href="#main.models.driver_step_route.task_number" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigIntegerField</span></code></a></p>
+<p>Primary key: Номер задачи</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main.models.manager_task">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.models.</span></span><span class="sig-name descname"><span class="pre">manager_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.manager_task" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p>Модель для создания задач от менеджера.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_number</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><em>BigIntegerField</em></a>) – Primary key: Номер задачи</p></li>
+<li><p><strong>date_task</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><em>DateField</em></a>) – Дата задачи</p></li>
+<li><p><strong>phone_manager</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Телефон менеджера</p></li>
+<li><p><strong>phone_driver</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Телефон водителя</p></li>
+<li><p><strong>number_route</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><em>CharField</em></a>) – Номер маршрута</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.manager_task.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#main.models.manager_task.DoesNotExist" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="main.models.manager_task.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#main.models.manager_task.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<dd><p>Базовые классы: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.manager_task.date_task">
+<span class="sig-name descname"><span class="pre">date_task</span></span><a class="headerlink" href="#main.models.manager_task.date_task" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></a></p>
+<p>Дата задачи</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.manager_task.get_next_by_date_task">
+<span class="sig-name descname"><span class="pre">get_next_by_date_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_task&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.manager_task.get_next_by_date_task" title="Link to this definition">¶</a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#main.models.manager_task.date_task" title="main.models.manager_task.date_task"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_task</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.models.manager_task.get_previous_by_date_task">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateField:</span> <span class="pre">date_task&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.models.manager_task.get_previous_by_date_task" title="Link to this definition">¶</a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#main.models.manager_task.date_task" title="main.models.manager_task.date_task"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_task</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(в Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.manager_task.number_route">
+<span class="sig-name descname"><span class="pre">number_route</span></span><a class="headerlink" href="#main.models.manager_task.number_route" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Номер маршрута</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.manager_task.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#main.models.manager_task.objects" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.manager_task.phone_driver">
+<span class="sig-name descname"><span class="pre">phone_driver</span></span><a class="headerlink" href="#main.models.manager_task.phone_driver" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Телефон водителя</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.manager_task.phone_manager">
+<span class="sig-name descname"><span class="pre">phone_manager</span></span><a class="headerlink" href="#main.models.manager_task.phone_manager" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Телефон менеджера</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.models.manager_task.task_number">
+<span class="sig-name descname"><span class="pre">task_number</span></span><a class="headerlink" href="#main.models.manager_task.task_number" title="Link to this definition">¶</a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigIntegerField" title="(в Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigIntegerField</span></code></a></p>
+<p>Primary key: Номер задачи</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-main.tests">
+<span id="main-tests"></span><h2>Модуль main.tests<a class="headerlink" href="#module-main.tests" title="Link to this heading">¶</a></h2>
+<p>В данном модуле можно добавлять необходимые тесты для приложения.</p>
+</section>
+<section id="module-main.urls">
+<span id="main-urls"></span><h2>Модуль main.urls<a class="headerlink" href="#module-main.urls" title="Link to this heading">¶</a></h2>
+<p>В данном модуле определяются шаблоны URL-адресов для различных представлений.
+Модуль включает в себя необходимую конфигурацию для обслуживания мультимедийных файлов.</p>
+</section>
+<section id="module-main.views">
+<span id="main-views"></span><h2>Модуль main.views<a class="headerlink" href="#module-main.views" title="Link to this heading">¶</a></h2>
+<p>В данном модуле создаются представления, которые будут выполнять логику проекта.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.create">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.create" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции сначала проверяется, является ли метод запроса POST.
+Далее создаётся экземпляр формы с данными из запроса и проверяется действительна ли форма.
+Если форма действительна, создается новый экземпляр модели driver_report с данными формы,
+которые далее сохраняются. Происходит перенаправление на страницу success.
+Если форма не верно записана, возвращается ошибка.
+Если метод запроса не POST, создается новый экземпляр формы.
+Подготавливаются данные для рендеринга шаблона.
+Функция возвращает шаблон main/create.html с формой и данными об ошибках.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.driver_step_route_view">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">driver_step_route_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.driver_step_route_view" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции сначала проверяется, является ли метод запроса POST.
+Далее создаётся экземпляр формы с данными из запроса и проверяется действительна ли форма.
+Если форма действительна, создается новый экземпляр модели driver_step_route с данными формы,
+которые далее сохраняются. Происходит перенаправление на страницу /profile/create.
+Если форма не верно записана, возвращается ошибка.
+Если метод запроса не POST, создается новый экземпляр формы.
+Подготавливаются данные для рендеринга шаблона.
+Функция возвращает шаблон main/step.html с формой и данными об ошибках.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.export_to_excel_itog">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">export_to_excel_itog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.export_to_excel_itog" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который запрашивает все записи из представления INTERN_TEAM8.select_itog_report.
+Извлекаются все строки, возвращенные запросом.
+Данные преобразуются в DataFrame с явным указанием названий столбцов.
+Задается путь для сохранения Excel-файла. DataFrame сохраняется в Excel-файл.
+Excel-файл открывается в бинарном режиме для создания HTTP-ответа и создается HTTP-ответ с содержимым Excel-файла.
+Задается имя файла при скачивании.
+Функция возвращает HTTP-ответ.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.export_to_excel_task">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">export_to_excel_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.export_to_excel_task" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который запрашивает все записи из представления INTERN_TEAM8.select_dwh_report.
+Извлекаются все строки, возвращенные запросом.
+Данные преобразуются в DataFrame с явным указанием названий столбцов.
+Задается путь для сохранения Excel-файла. DataFrame сохраняется в Excel-файл.
+Excel-файл открывается в бинарном режиме для создания HTTP-ответа и создается HTTP-ответ с содержимым Excel-файла.
+Задается имя файла при скачивании.
+Функция возвращает HTTP-ответ.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.manager_task_view">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">manager_task_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.manager_task_view" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции сначала проверяется, является ли метод запроса POST.
+Далее создаётся экземпляр формы с данными из запроса и проверяется действительна ли форма.
+Если форма действительна, создается новый экземпляр модели manager_task с данными формы,
+которые далее сохраняются. Происходит перенаправление на страницу success.
+Если форма не верно записана, возвращается ошибка.
+Если метод запроса не POST, создается новый экземпляр формы.
+Подготавливаются данные для рендеринга шаблона.
+Функция возвращает шаблон main/task.html с формой и данными об ошибках.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.route">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.route" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции сначала проверяется, является ли метод запроса POST.
+Далее создаётся экземпляр формы с данными из запроса и проверяется действительна ли форма.
+Если форма действительна, создается новый экземпляр модели catalog_route_url с данными формы,
+которые далее сохраняются. Происходит перенаправление на страницу success.
+Если форма не верно записана, возвращается ошибка.
+Если метод запроса не POST, создается новый экземпляр формы.
+Подготавливаются данные для рендеринга шаблона.
+Функция возвращает шаблон main/route.html с формой и данными об ошибках.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.select_catalog_driver">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">select_catalog_driver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.select_catalog_driver" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который запрашивает все записи из представления INTERN_TEAM8.select_catalog_driver.
+Извлекаются все строки, возвращенные запросом.
+Функция возвращает шаблон main/select_catalog_driver.html с полученными данными.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.select_driver_task_url">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">select_driver_task_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.select_driver_task_url" title="Link to this definition">¶</a></dt>
+<dd><p>Функция должна быть доступна только авторизованным пользователям.
+Получается информация о текущем пользователе (username, first_name, last_name)
+Открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который возвращает данные о новых заданиях для определенного водителя.
+Извлекаются все строки, возвращенные запросом.
+Функция возвращает шаблон main/select_driver_task_url.html с полученными данными.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.select_dwh_report">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">select_dwh_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.select_dwh_report" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который запрашивает все записи из представления INTERN_TEAM8.select_dwh_report.
+Извлекаются все строки, возвращенные запросом.
+Функция возвращает шаблон main/select_dwh_report.html с полученными данными.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.select_itog_report">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">select_itog_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.select_itog_report" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который запрашивает все записи из представления INTERN_TEAM8.select_itog_report.
+Извлекаются все строки, возвращенные запросом.
+Функция возвращает шаблон main/select_itog_report.html с полученными данными.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.select_report">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">select_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.select_report" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который запрашивает все записи из представления INTERN_TEAM8.select_report.
+Извлекаются все строки, возвращенные запросом.
+Функция возвращает шаблон main/select_report.html с полученными данными.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.select_url_route">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">select_url_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.select_url_route" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции открывается курсор для взаимодействия с базой данных.
+Выполняется SQL-запрос, который запрашивает все записи из представления INTERN_TEAM8.select_url_route.
+Извлекаются все строки, возвращенные запросом.
+Функция возвращает шаблон main/select_url_route.html с полученными данными.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.start_job">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">start_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.start_job" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции вызывается функция start_scheduler(), которая запускает планировщик задач.
+В результате возвращается HTTP-ответ с сообщением.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.stop_job">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">stop_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.stop_job" title="Link to this definition">¶</a></dt>
+<dd><p>В данной функции вызывается функция stop_scheduler(), которая останавливает планировщик задач.
+В результате возвращается HTTP-ответ с сообщением.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.success">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.views.success" title="Link to this definition">¶</a></dt>
+<dd><p>Функция возвращает шаблон main/success.html</p>
+</dd></dl>
+
+</section>
+<section id="module-main">
+<span id="id3"></span><h2>Содержание модуля:<a class="headerlink" href="#module-main" title="Link to this heading">¶</a></h2>
+<p>Приложение main является функциональным сердцем проекта, в котором определяются основные модели, формы, представления.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">mysite</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Проект web-app:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">mysite</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">mysite</a><ul>
+  <li><a href="mysite.html">Директория mysite:</a><ul>
+      <li>Previous: <a href="mysite.html" title="предыдущая глава">Директория mysite:</a></li>
+      <li>Next: <a href="mysite.main.migrations.html" title="следующая глава">Директория main.migrations:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Дьяконова Анастасия.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/mysite.main.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
