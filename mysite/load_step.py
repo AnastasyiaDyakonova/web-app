@@ -1,3 +1,4 @@
+"""Данный модуль загружает тестовые данные для модели driver_step_route из файла 'main/static/main/excel/point_driver.xlsx' """
 import os
 import pandas as pd
 from django.core.wsgi import get_wsgi_application
@@ -10,11 +11,13 @@ from main.models import driver_step_route
 
 
 def load_route_data(file_path):
+    """Функция принимает путь к файлу Excel в качестве аргумента.
+        Считывает данные из Excel-файла.
+        Заменяет все значения NaN на None в DataFrame.
+        Затем она итерирует по строкам DataFrame и создает объекты driver_step_route,
+        используя данные из каждой строки Excel-файла."""
     df = pd.read_excel(file_path, engine='openpyxl')
-
-    # Заменяем все значения NaN на None
     df = df.where(pd.notna(df), None)
-
     for index, row in df.iterrows():
         driver_step_route.objects.create(
             task_number=row['task_number'],

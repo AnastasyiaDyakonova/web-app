@@ -1,9 +1,9 @@
 """
-ASGI config for mysite project.
+Конфигурация ASGI для проекта mysite.
 
-It exposes the ASGI callable as a module-level variable named ``application``.
+Она предоставляет вызываемый ASGI как переменную уровня модуля с именем «application».
 
-For more information on this file, see
+Дополнительную информацию об этом файле см.
 https://docs.djangoproject.com/en/4.2/howto/deployment/asgi/
 """
 

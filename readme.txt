@@ -31,7 +31,7 @@ lib_dir = r"C:\Program Files\Oracle\instantclient_21_12"
  python manage.py migrate
  python manage.py runscript createtable (скрипт для создания слоя сырых данных и хранилища)
  python load_route.py (скрипт для добавления маршрутов)
- python manage.py createsuperuser (добавление суперпользователя для входа в админку. Вводим имя, почту и 2 раза пароль)
+ --python manage.py createsuperuser (добавление суперпользователя для входа в админку. Вводим имя, почту и 2 раза пароль)
  python load_step.py (тестовые данные за декабрь - шаги маршрута)
  python load_driver_report.py  (тестовые данные за декабрь - отчет водителя)
  python load_user.py  (тестовые данные за декабрь - добавленные пользователи)

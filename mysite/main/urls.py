@@ -1,3 +1,5 @@
+"""В данном модуле определяются шаблоны URL-адресов для различных представлений.
+Модуль включает в себя необходимую конфигурацию для обслуживания мультимедийных файлов."""
 from django.urls import path
 from .views import create, route, manager_task_view, driver_step_route_view, select_url_route, select_catalog_driver, \
     select_report, start_job, stop_job, select_driver_task_url, success, select_dwh_report, select_itog_report, \

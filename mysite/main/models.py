@@ -1,6 +1,8 @@
+"""В данном модуле создаются модели, с помощью которых осуществляется взаимодействие с базой данных"""
 from django.db import models
 
 class driver_report(models.Model):
+    """Модель для заполнения отчета водителя."""
     task_number = models.BigIntegerField('Номер задачи')
     odometr_from = models.BigIntegerField('Одометр на начало маршрута')
     odometr_to = models.BigIntegerField('Одометр на конец маршрута')
@@ -16,6 +18,7 @@ class driver_report(models.Model):
         verbose_name_plural = "Отчеты водителей"
 
 class catalog_route_url(models.Model):
+    """Модель для создания справочника маршрутов."""
     number_route = models.CharField('Номер маршрута', max_length=7, primary_key=True)
     count_point_to_route = models.IntegerField('Количество точек на маршруте')
     point_1 = models.CharField('Точка 1', max_length=20)
@@ -35,6 +38,7 @@ class catalog_route_url(models.Model):
         verbose_name_plural = "URL-адреса"
 
 class manager_task(models.Model):
+    """Модель для создания задач от менеджера."""
     task_number = models.BigIntegerField('Номер задачи', primary_key=True)
     date_task = models.DateField('Дата задачи')
     phone_manager = models.CharField('Телефон менеджера', max_length=11)
@@ -45,6 +49,7 @@ class manager_task(models.Model):
         verbose_name_plural = "Задачи от менеджера"
 
 class driver_step_route(models.Model):
+    """Модель для создания шагов маршрута."""
     task_number = models.BigIntegerField('Номер задачи', primary_key=True)
     date_and_time_route_from = models.DateTimeField('Дата и время начала маршрута')
     point_1 = models.BooleanField('Точка 1', default=False, blank=True)

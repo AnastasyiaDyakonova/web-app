@@ -1,3 +1,4 @@
+"""В данном модуле определяются шаблоны URL-адресов для различных представлений."""
 from django.urls import path, include
 from .views import RegisterView, profile_views, home
 

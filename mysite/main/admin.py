@@ -1,3 +1,4 @@
+"""В данном модуле регистрируются модели для работы в административной части сайта."""
 from django.contrib import admin
 
 from .models import driver_report, catalog_route_url, manager_task, driver_step_route

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
+"""Утилита командной строки Django для административных задач."""
 import os
 import sys
 import cx_Oracle
@@ -7,7 +7,7 @@ import cx_Oracle
 lib_dir = r"C:\Program Files\Oracle\instantclient_21_12"
 cx_Oracle.init_oracle_client(lib_dir=lib_dir)
 def main():
-    """Run administrative tasks."""
+    """Выполняет административные задачи."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
     try:
         from django.core.management import execute_from_command_line

@@ -1,3 +1,4 @@
+"""В данном модуле регистрируются модели для работы в административной части сайта."""
 from django.contrib import admin
 
 # Register your models here.

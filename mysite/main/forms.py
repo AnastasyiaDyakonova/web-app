@@ -1,9 +1,11 @@
+""" В данном модуле настраивается основной интерфейс для созданных моделей, прописываются нужные поля, настраиваются виджеты."""
 from django.forms import Form, ModelForm, TextInput, DateTimeInput, NumberInput, DateInput, FileInput, URLInput, \
     CheckboxInput
 from .models import driver_report, catalog_route_url, manager_task, driver_step_route
 
 
 class driver_reportForm(ModelForm):
+    """Создается форма для модели driver_report."""
     class Meta:
         model = driver_report
         fields = ['task_number', 'odometr_from', 'odometr_to', 'check_number', 'date_check', 'sum_check', 'image_check', 'date_create_driver_report']
@@ -21,6 +23,7 @@ class driver_reportForm(ModelForm):
 
 
 class catalog_route_urlForm(ModelForm):
+    """Создается форма для модели catalog_route_url."""
     class Meta:
         model = catalog_route_url
         fields = ['number_route', 'count_point_to_route', 'point_1', 'point_2', 'point_3', 'point_4', 'point_5', 'point_6', 'point_7', 'point_8', 'point_9', 'point_10', 'url_route', 'date_create_route']
@@ -43,6 +46,7 @@ class catalog_route_urlForm(ModelForm):
         }
 
 class manager_taskForm(ModelForm):
+    """Создается форма для модели manager_task."""
     class Meta:
         model = manager_task
         fields = ['task_number', 'date_task', 'phone_manager', 'phone_driver', 'number_route']
@@ -55,7 +59,7 @@ class manager_taskForm(ModelForm):
             "number_route": TextInput(attrs={'id': 'number_route', 'name': 'number_route', 'required': ''})}
 
 class driver_step_routeForm(ModelForm):
-
+    """Создается форма для модели driver_step_route."""
     class Meta:
         model = driver_step_route
         fields = ['task_number', 'date_and_time_route_from', 'point_1', 'point_2', 'point_3', 'point_4', 'point_5', 'point_6', 'point_7', 'point_8', 'point_9', 'point_10','date_and_time_route_to']

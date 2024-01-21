@@ -1,3 +1,7 @@
+"""
+В данном модуле импортируются переменные из модуля tran_dwh_sql.
+Создается подключение к базе данных и выполняются запросы из каждой переменной модуля tran_dwh_sql.
+"""
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 from django.db import connection, transaction

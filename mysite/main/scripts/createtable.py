@@ -1,7 +1,10 @@
+"""
+В данном модуле импортируются переменные из модуля createdwh.
+Создается подключение к базе данных и выполняются запросы из каждой переменной модуля createdwh.
+"""
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 from django.db import connection
-
 from .createdwh import *
 
 
