@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="ru" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Директория main.scripts: &#8212; документация mysite 1.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=9ca2116e"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=29b1f277"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Директория main.static:" href="mysite.main.static.html" />
+    <link rel="prev" title="Директория main.migrations:" href="mysite.main.migrations.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="main-scripts">
+<h1>Директория main.scripts:<a class="headerlink" href="#main-scripts" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2>Субмодули:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-main.scripts.createdwh">
+<span id="main-scripts-createdwh"></span><h2>Модуль main.scripts.createdwh<a class="headerlink" href="#module-main.scripts.createdwh" title="Link to this heading">¶</a></h2>
+<p>В данном модуле хранятся переменные, в которых записаны запросы на создание таблиц
+для ETL-процесса(слой stg, слой tgt, meta-данные).
+Также хранятся переменные, в которых записаны запросы на создание представлений для отчетности,
+справочников и мета-информации.</p>
+</section>
+<section id="module-main.scripts.createtable">
+<span id="main-scripts-createtable"></span><h2>Модуль main.scripts.createtable<a class="headerlink" href="#module-main.scripts.createtable" title="Link to this heading">¶</a></h2>
+<p>В данном модуле импортируются переменные из модуля createdwh.
+Создается подключение к базе данных и выполняются запросы из каждой переменной модуля createdwh.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.scripts.createtable.run">
+<span class="sig-prename descclassname"><span class="pre">main.scripts.createtable.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.scripts.createtable.run" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-main.scripts.scheduler">
+<span id="main-scripts-scheduler"></span><h2>Модуль main.scripts.scheduler<a class="headerlink" href="#module-main.scripts.scheduler" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.scripts.scheduler.execute_script">
+<span class="sig-prename descclassname"><span class="pre">main.scripts.scheduler.</span></span><span class="sig-name descname"><span class="pre">execute_script</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.scripts.scheduler.execute_script" title="Link to this definition">¶</a></dt>
+<dd><p>Вызывается файл tran_dwh на исполнение. Устанавливается расписание, каждый день в 22 часа 51 минуту.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.scripts.scheduler.start_scheduler">
+<span class="sig-prename descclassname"><span class="pre">main.scripts.scheduler.</span></span><span class="sig-name descname"><span class="pre">start_scheduler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.scripts.scheduler.start_scheduler" title="Link to this definition">¶</a></dt>
+<dd><p>Функция для запуска планировщика задач.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.scripts.scheduler.stop_scheduler">
+<span class="sig-prename descclassname"><span class="pre">main.scripts.scheduler.</span></span><span class="sig-name descname"><span class="pre">stop_scheduler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.scripts.scheduler.stop_scheduler" title="Link to this definition">¶</a></dt>
+<dd><p>Функция для остановки планировщика задач.</p>
+</dd></dl>
+
+</section>
+<section id="module-main.scripts.tran_dwh">
+<span id="main-scripts-tran-dwh"></span><h2>Модуль main.scripts.tran_dwh<a class="headerlink" href="#module-main.scripts.tran_dwh" title="Link to this heading">¶</a></h2>
+<p>В данном модуле импортируются переменные из модуля tran_dwh_sql.
+Создается подключение к базе данных и выполняются запросы из каждой переменной модуля tran_dwh_sql.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.scripts.tran_dwh.run">
+<span class="sig-prename descclassname"><span class="pre">main.scripts.tran_dwh.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.scripts.tran_dwh.run" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-main.scripts.tran_dwh_sql">
+<span id="main-scripts-tran-dwh-sql"></span><h2>Модуль main.scripts.tran_dwh_sql<a class="headerlink" href="#module-main.scripts.tran_dwh_sql" title="Link to this heading">¶</a></h2>
+<p>В данном модуле хранятся переменные, в которых записаны запросы на создание ETL-процесса.</p>
+<p>1. Загрузка в STG (захват, extract):
+Сначала записи в stg-слое удаляются. Далее данные из источников загружаются в stg-слой как есть,
+при условии, что дата записей в источнике больше последней сохраненной записи даты в метаданных
+или больше минимальной возможной даты(01.01.1800) в случае, если записей в метаданных нет.
+Также добавляются уникальные ключи, для дальнейшей обработки удаленных записей.</p>
+<p>2. Выделение вставок и изменений (transform); вставка их в приемник (load):
+Проверяется, есть ли изменившиеся строки. К таблице из tgt присоединяем таблицу из stg по ключу, где ключ
+stg-таблицы не нулевой, запись есть и она актуальная. В tgt-слой вставляются данные из stg,
+в effective_from прописывается дата изменения записи. В effective_to вставляется запись
+31.12.9999(что говорит о том, что запись актуальна), ставим флаг 0(значить, что запись не удалена).
+Если в результате предыдущей вставки записи добавились, выполняется обновление в tgt строки с таким же
+уникальным ключом. Меняется effective_to - ставиться дата дня, предшествующего новой
+записи.
+Если в результате предыдущей вставки записи не добавились, новые записи вставляются в tgt.</p>
+<p>3. Обработка удалений:
+К таблице tgt присоединяется таблица из stg по уникальному ключу. Если в stg нет уникального ключа,
+а в tgt такой уникальный ключ есть, при этом запись активна и флага удаления нет,
+то в tgt вставляется запись с этим уникальным ключом, в effective_from записывается
+дата из метаданных, запись ставится активной и ставиться флаг удаления.
+Далее обновляется дата последней не удаленной записи, где effective_to становится днем,
+предшествующим удалению записи.</p>
+<p>4. Обновление метаданных:
+При первой записи идет запись даты 01.01.1800, далее дата будет обвовляться, в зависимости от даты
+приходящей записи из таблицы задач от менеджера из источника.</p>
+</section>
+<section id="module-main.scripts">
+<span id="id2"></span><h2>Содержание модуля:<a class="headerlink" href="#module-main.scripts" title="Link to this heading">¶</a></h2>
+<p>Данная директория содержит 5 модулей для создания и функционирования ETL-процесса:</p>
+<ol class="arabic simple">
+<li><p>createdwh.py - содержит sql-запросы для добавления таблиц и представлений в базу данных,переданные в переменные;</p></li>
+<li><p>createtable.py - скрипт для создания таблиц и представлений из модуля createdwh.py;</p></li>
+<li><p>scheduler.py - создает задачу и ставит ее на выполнение или выключение;</p></li>
+<li><p>tran_dwh.py - скрипт для создания ETL-процесса;</p></li>
+<li><p>tran_dwh_sql.py - содержит sql-запросы для выполнения ETL-процесса, переданные в переменные.</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">mysite</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Проект web-app:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">mysite</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mysite.html">Директория mysite:</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">mysite</a><ul>
+  <li><a href="mysite.html">Директория mysite:</a><ul>
+  <li><a href="mysite.main.html">Директория main:</a><ul>
+      <li>Previous: <a href="mysite.main.migrations.html" title="предыдущая глава">Директория main.migrations:</a></li>
+      <li>Next: <a href="mysite.main.static.html" title="следующая глава">Директория main.static:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Дьяконова Анастасия.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/mysite.main.scripts.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

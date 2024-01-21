@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="ru" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Директория mysite: &#8212; документация mysite 1.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=9ca2116e"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=29b1f277"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Директория main:" href="mysite.main.html" />
+    <link rel="prev" title="mysite" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mysite">
+<h1>Директория mysite:<a class="headerlink" href="#mysite" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2>Поддиректории:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mysite.main.html">Директория main:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysite.media.html">Директория media:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysite.mysite.html">Директория mysite:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysite.users.html">Директория users:</a></li>
+</ul>
+</div>
+</section>
+<section id="id2">
+<h2>Модули входящие в директорию mysite:<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-load_driver_report">
+<span id="load-driver-report"></span><h2>Модуль load_driver_report<a class="headerlink" href="#module-load_driver_report" title="Link to this heading">¶</a></h2>
+<p>Данный модуль загружает тестовые данные для модели driver_report из файла „main/static/main/excel/driver_report.xlsx“</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_driver_report.load_route_data">
+<span class="sig-prename descclassname"><span class="pre">load_driver_report.</span></span><span class="sig-name descname"><span class="pre">load_route_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_driver_report.load_route_data" title="Link to this definition">¶</a></dt>
+<dd><p>Функция принимает путь к файлу Excel в качестве аргумента.
+Считывает данные из Excel-файла.
+Заменяет все значения NaN на None в DataFrame.
+Затем она итерирует по строкам DataFrame и создает объекты driver_report,
+используя данные из каждой строки Excel-файла.</p>
+</dd></dl>
+
+</section>
+<section id="module-load_route">
+<span id="load-route"></span><h2>Модуль load_route<a class="headerlink" href="#module-load_route" title="Link to this heading">¶</a></h2>
+<p>Данный модуль загружает тестовые данные для модели catalog_route_url из файла „main/static/main/excel/catalog_route.xlsx“</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_route.load_route_data">
+<span class="sig-prename descclassname"><span class="pre">load_route.</span></span><span class="sig-name descname"><span class="pre">load_route_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_route.load_route_data" title="Link to this definition">¶</a></dt>
+<dd><p>Функция принимает путь к файлу Excel в качестве аргумента.
+Считывает данные из Excel-файла.
+Заменяет все значения NaN на None в DataFrame.
+Затем она итерирует по строкам DataFrame и создает объекты catalog_route_url,
+используя данные из каждой строки Excel-файла.</p>
+</dd></dl>
+
+</section>
+<section id="module-load_step">
+<span id="load-step"></span><h2>Модуль load_step<a class="headerlink" href="#module-load_step" title="Link to this heading">¶</a></h2>
+<p>Данный модуль загружает тестовые данные для модели driver_step_route из файла „main/static/main/excel/point_driver.xlsx“</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_step.load_route_data">
+<span class="sig-prename descclassname"><span class="pre">load_step.</span></span><span class="sig-name descname"><span class="pre">load_route_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_step.load_route_data" title="Link to this definition">¶</a></dt>
+<dd><p>Функция принимает путь к файлу Excel в качестве аргумента.
+Считывает данные из Excel-файла.
+Заменяет все значения NaN на None в DataFrame.
+Затем она итерирует по строкам DataFrame и создает объекты driver_step_route,
+используя данные из каждой строки Excel-файла.</p>
+</dd></dl>
+
+</section>
+<section id="module-load_task">
+<span id="load-task"></span><h2>Модуль load_task<a class="headerlink" href="#module-load_task" title="Link to this heading">¶</a></h2>
+<p>Данный модуль загружает тестовые данные для модели manager_task из файла „main/static/main/excel/task.xlsx“</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_task.load_route_data">
+<span class="sig-prename descclassname"><span class="pre">load_task.</span></span><span class="sig-name descname"><span class="pre">load_route_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_task.load_route_data" title="Link to this definition">¶</a></dt>
+<dd><p>Функция принимает путь к файлу Excel в качестве аргумента.
+Считывает данные из Excel-файла.
+Заменяет все значения NaN на None в DataFrame.
+Затем она итерирует по строкам DataFrame и создает объекты manager_task,
+используя данные из каждой строки Excel-файла.</p>
+</dd></dl>
+
+</section>
+<section id="module-load_user">
+<span id="load-user"></span><h2>Модуль load_user<a class="headerlink" href="#module-load_user" title="Link to this heading">¶</a></h2>
+<p>Данный модуль загружает тестовые данные для модели User из файла „main/static/main/excel/user.xlsx“</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_user.load_route_data">
+<span class="sig-prename descclassname"><span class="pre">load_user.</span></span><span class="sig-name descname"><span class="pre">load_route_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_user.load_route_data" title="Link to this definition">¶</a></dt>
+<dd><p>Функция принимает путь к файлу Excel в качестве аргумента.
+Считывает данные из Excel-файла.
+Заменяет все значения NaN на None в DataFrame.
+Затем она итерирует по строкам DataFrame и создает объекты User,
+используя данные из каждой строки Excel-файла.</p>
+</dd></dl>
+
+</section>
+<section id="module-manage">
+<span id="manage"></span><h2>Модуль manage<a class="headerlink" href="#module-manage" title="Link to this heading">¶</a></h2>
+<p>Утилита командной строки Django для административных задач.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="manage.main">
+<span class="sig-prename descclassname"><span class="pre">manage.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manage.main" title="Link to this definition">¶</a></dt>
+<dd><p>Выполняет административные задачи.</p>
+</dd></dl>
+
+</section>
+<section id="module-mysite">
+<span id="id3"></span><h2>Содержание модуля:<a class="headerlink" href="#module-mysite" title="Link to this heading">¶</a></h2>
+<p>В директории mysite находятся основные настройки проекта mysite.
+Вся переадресация сайта начинается с mysite/urls.py.</p>
+<p>Приложение создано для работы в ГУП «Нерезиновая».
+Создан сайт, в котором реализованы:</p>
+<ol class="arabic simple">
+<li><p>Механизмы входа, регистрации, аутентификации;</p></li>
+<li><p>Разграничение прав доступа для двух ролей - менеджер и водитель;</p></li>
+<li><p>Созданы модели, формы и представления в соответствии с потребностью компании;</p></li>
+<li><p>Создана карта и на ее основании построены наиболее оптимальные маршруты;</p></li>
+<li><p>Создана возможность интерактивного взаимодействия между сотрудниками компании;</p></li>
+<li><p>Создан процесс ETL, с запуском по расписанию;</p></li>
+<li><p>Созданы необходимые отчеты и возможность сохранения отчетов в excel-файлах;</p></li>
+<li><p>Добавлены механизмы добавления тестовых данных при установке сайта.</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">mysite</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Проект web-app:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">mysite</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">mysite</a><ul>
+      <li>Previous: <a href="modules.html" title="предыдущая глава">mysite</a></li>
+      <li>Next: <a href="mysite.main.html" title="следующая глава">Директория main:</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Дьяконова Анастасия.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/mysite.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
