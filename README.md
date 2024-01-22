@@ -1,4 +1,4 @@
-# **Инструкция по установке:**
+# **Инструкция по установке и запуску:**
 _У Вас должен быть установлен Oracle(он на стороне клиента), DBeaver, PyCharm, Anaconda, git, python(версия 3.9)._
 
  Переходим по [ссылке](https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html)
