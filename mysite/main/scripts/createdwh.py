@@ -222,8 +222,8 @@ SELECT EXTRACT(MONTH FROM DATE__TASK) AS mes,
     EXTRACT(MINUTE FROM time_route) * 60 +
 	EXTRACT(SECOND FROM time_route)) / 3600)), 2) AS avg_time_route,
 	round((avg(DISTANCE_KM)), 2) AS avg_duration_route, 
-	avg(KOL_VO_BENS) AS avg_kol_vo_bens
+	round(avg(KOL_VO_BENS), 2) AS avg_kol_vo_bens
 from select_dwh_report 
 where  DATE__TASK BETWEEN (SELECT date_from FROM select_date_report) AND (SELECT date_to FROM select_date_report) 
-GROUP BY EXTRACT(MONTH FROM DATE__TASK) 
+GROUP BY EXTRACT(MONTH FROM DATE__TASK)
 """
